@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import React from 'react';
+import bannerImage from '../assets/banner.jpg';
 
 export function Hero() {
   const scrollToContact = () => {
@@ -10,9 +11,12 @@ export function Hero() {
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1745329532608-bbda3b742e00?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZXJzb25hbCUyMHRyYWluZXIlMjBneW18ZW58MXx8fHwxNzY1MDI4Mzg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral)'
+          backgroundImage: `url(${bannerImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>

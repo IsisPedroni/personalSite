@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Plus } from 'lucide-react';
 import { useState } from 'react';
+import React from 'react';
 
 export function Gallery() {
   const [showAll, setShowAll] = useState(false);

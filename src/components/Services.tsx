@@ -1,43 +1,51 @@
-import { Dumbbell, Users, Calendar, Target } from 'lucide-react';
+import { Dumbbell, Calendar, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { User, Laptop, Users } from 'lucide-react';
+import React from 'react';
 
 export function Services() {
   const services = [
     {
-      icon: Dumbbell,
-      title: 'Personal Training',
-      description: 'One-on-one customized workout sessions tailored to your specific goals and fitness level.',
-      features: ['Custom workout plans', 'Nutrition guidance', 'Progress tracking']
+      icon: User,
+      title: 'One on One Private Training',
+      price: '$75 / Session',
+      description: 'One-on-one private training includes personalized attention and customized workouts.',
+      features: [
+        'A great workout!',
+        'Discuss your diet and the best ways to get lean',
+        'Discuss your goals and how to get you there'
+      ]
+    },
+    {
+      icon: Laptop,
+      title: 'Online Training with check-ins',
+      price: '$350 / Month',
+      description: 'My online coaching system is customized to your exact needs. You\'ll share your lifestyle, habits, weight, height, and photos. I\'ll create an individualized nutrition and training plan. Daily weight check-ins via WhatsApp, with plan adjustments every two weeks based on your progress photos. The best part? If you\'re doing great and sticking to the plan, you\'ll get "cheat" meals 😁',
+      features: [
+        'Daily Check-ins',
+        'Custom meal plan',
+        'Text updates',
+        'What to expect'
+      ],
+      paymentInfo: 'The cost for this service is $350 a month, and that is paid each month on the date you choose to start. You can pay with cash, Zelle, PayPal, or Venmo.'
     },
     {
       icon: Users,
-      title: 'Group Training',
-      description: 'High-energy group sessions that combine motivation, accountability, and community support.',
-      features: ['Small group sizes', 'Fun & challenging', 'Affordable pricing']
-    },
-    {
-      icon: Calendar,
-      title: 'Online Coaching',
-      description: 'Remote training programs with personalized workouts and video consultations from anywhere.',
-      features: ['Flexible scheduling', 'Video check-ins', 'App-based tracking']
-    },
-    // {
-    //   icon: Target,
-    //   title: 'Nutrition Planning',
-    //   description: 'Customized meal plans and nutritional guidance to complement your training and maximize results.',
-    //   features: ['Meal planning', 'Macro tracking', 'Lifestyle coaching']
-    // }
+      title: 'Group Training w/ small groups',
+      price: '$45 / session',
+      description: 'Group training sessions include hard workouts tailored for your needs in a positive and supportive environment.',
+      features: [
+        'Hard workout tailored for your needs',
+        'Positive environment',
+        'Motivation & support'
+      ]
+    }
   ];
-
-  const scrollToContact = () => {
-    const footer = document.querySelector('footer');
-    footer?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <section id="services" className="py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,12 +58,12 @@ export function Services() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <motion.div 
-                key={index} 
+              <motion.div
+                key={index}
                 className="bg-white text-black p-6 rounded-lg hover:scale-105 transition-transform duration-300 flex flex-col"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +73,7 @@ export function Services() {
                 <div className="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-4">
                   <Icon className="text-white" size={24} />
                 </div>
-                
+
                 <h3 className="mb-3 text-black">{service.title}</h3>
                 <p className="text-gray-600 mb-4 text-sm flex-grow">
                   {service.description}
@@ -81,7 +89,7 @@ export function Services() {
                 </ul>
 
                 <button
-                  onClick={scrollToContact}
+                  onClick={() => window.open('https://wa.me/18589524252', '_blank')}
                   className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-lg transition-colors mt-auto"
                 >
                   Contact

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Award, Target, Users, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
+import aboutImage from '../assets/2.jpg';
 
 export function About() {
   const stats = [
     { icon: Award, label: 'Years of Experience', value: '20+' },
     { icon: Users, label: 'Clients Trained', value: '500+' },
-    // { icon: Target, label: 'Success Rate', value: '95%' },
-    // { icon: TrendingUp, label: 'Certifications', value: '8' }
+
   ];
 
   return (
@@ -21,9 +21,9 @@ export function About() {
             transition={{ duration: 0.6 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1734189605012-f03d97a4d98f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhaW5pbmclMjB3b3Jrb3V0fGVufDF8fHx8MTc2NTAzMjA3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src={aboutImage}
               alt="Personal Trainer"
-              className="rounded-lg shadow-xl w-full h-[500px] object-cover"
+              className="rounded-lg shadow-xl w-full h-[500px] object-cover object-top"
             />
           </motion.div>
 
