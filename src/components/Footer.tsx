@@ -10,10 +10,10 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white pt-20 pb-8">
+    <footer id="contact" className="bg-black text-white pt-20 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contact Section */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,24 +22,14 @@ export function Footer() {
         >
           <h2 className="text-white mb-4">Get In Touch</h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-            Ready to transform your life? Schedule your free assessment today!
+            San Diego, It's Growing Time!
           </p>
 
           {/* Contact Cards */}
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-8">
-            <motion.div 
-              className="bg-gray-900 p-6 rounded-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <MapPin className="text-white mx-auto mb-3" size={28} />
-              <div className="text-white mb-2">Location</div>
-              <p className="text-gray-300 text-sm">Santiago, California, USA</p>
-            </motion.div>
 
-            <motion.div 
+
+            <motion.div
               className="bg-gray-900 p-6 rounded-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -48,19 +38,31 @@ export function Footer() {
             >
               <Phone className="text-white mx-auto mb-3" size={28} />
               <div className="text-white mb-2">Phone</div>
-              <p className="text-gray-300 text-sm">+1 (555) 123-4567</p>
+              <a href="https://wa.me/18589524252" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">858-952-4252</a>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="bg-gray-900 p-6 rounded-lg"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Mail className="text-white mx-auto mb-3" size={28} />
-              <div className="text-white mb-2">Email</div>
-              <p className="text-gray-300 text-sm">contact@dudabueno.com</p>
+              <Mail className="text-white mx-auto mb-2" size={24} />
+              <div className="mb-2 text-white font-semibold">Email</div>
+              <a href="mailto:duda_munaia@hotmail.com" className="text-gray-300 hover:text-white transition-colors break-all">duda_munaia@hotmail.com</a>
+            </motion.div>
+
+            <motion.div
+              className="bg-gray-900 p-6 rounded-lg"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <MapPin className="text-white mx-auto mb-3" size={28} />
+              <div className="text-white mb-2">Location</div>
+              <p className="text-gray-300 text-sm">San Diego, California, USA</p>
             </motion.div>
           </div>
 
@@ -73,13 +75,13 @@ export function Footer() {
           >
             <div className="text-white mb-4">Follow Us</div>
             <div className="flex justify-center gap-4">
-              <a 
-                href="#" 
+              <a
+                href="https://instagram.com/dudabuenofitness"
                 className="w-12 h-12 bg-white text-black rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
               >
                 <Instagram size={20} />
               </a>
-             
+
             </div>
           </motion.div>
         </motion.div>
@@ -99,7 +101,7 @@ export function Footer() {
             <h4 className="text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('about')}
                   className="text-gray-300 hover:text-white transition-colors text-sm"
                 >
@@ -107,7 +109,7 @@ export function Footer() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('services')}
                   className="text-gray-300 hover:text-white transition-colors text-sm"
                 >
@@ -115,7 +117,7 @@ export function Footer() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('testimonials')}
                   className="text-gray-300 hover:text-white transition-colors text-sm"
                 >
@@ -123,7 +125,7 @@ export function Footer() {
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => scrollToSection('gallery')}
                   className="text-gray-300 hover:text-white transition-colors text-sm"
                 >
@@ -134,7 +136,7 @@ export function Footer() {
           </div>
 
           {/* Hours */}
-   
+
         </div>
 
         {/* Bottom Bar */}
