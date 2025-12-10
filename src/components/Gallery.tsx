@@ -198,14 +198,14 @@ export function Gallery() {
           <button
             onClick={() => setIsGalleryOpen(true)}
             className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all hover:scale-110"
-            aria-label="Abrir galeria"
+            aria-label="Open gallery"
           >
             <Plus size={32} />
           </button>
         </motion.div>
       </div>
 
-      {/* Modal da Galeria */}
+      {/* Gallery Modal */}
       <AnimatePresence>
         {isGalleryOpen && (
           <motion.div
@@ -215,19 +215,19 @@ export function Gallery() {
             exit={{ opacity: 0 }}
             style={{ height: '100vh', overflowY: 'auto' }}
           >
-            {/* Header com botão de fechar */}
+            {/* Header with close button */}
             <div className="sticky top-0 z-10 flex justify-between items-center p-6 bg-black bg-opacity-90 backdrop-blur-sm">
-              <h3 className="text-white text-2xl font-bold">Galeria Completa</h3>
+              <h3 className="text-white text-2xl font-bold">Full Gallery</h3>
               <button
                 onClick={() => setIsGalleryOpen(false)}
                 className="text-white hover:text-gray-300 transition-colors"
-                aria-label="Fechar galeria"
+                aria-label="Close gallery"
               >
                 <X size={32} />
               </button>
             </div>
 
-            {/* Grid com scroll */}
+            {/* Grid with scroll */}
             <div className="max-w-7xl mx-auto px-4 py-8">
               <motion.div
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
