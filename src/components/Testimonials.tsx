@@ -8,39 +8,81 @@ export function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'Lost 35 lbs in 4 months',
-      text: 'Amazing! The personalized workouts and constant support helped me achieve results I never imagined. 100% recommend!',
+      name: 'Oscar',
+      role: 'Results speak louder than words',
+      text: 'When I met Duda, I had already been working out for 12 years but with his help I was able to leave my comfort zone and have intense workouts. In only six months, I improved my shoulders by 200%, my legs got big and lean, and for the first time, I was able to see muscles I did not even know I had. Additionally, Working out with duda is also fun. He keeps you motivated even when you wake up on the left side of your bed. Be ready to do lunges on inclined streets! You will feel like you are dying but believe me it is all worth it. Results speak louder than words. Life made me move to Los Angeles and I had to stop working out with him but I miss him so much. So guys when looking for a trainer in the San Diego area, Duda is the one.',
       rating: 5
     },
     {
-      name: 'Michael Chen',
-      role: 'Gained 18 lbs of muscle',
-      text: 'Extremely dedicated and knowledgeable professional. The workouts are challenging but very effective. aaaaaaaaaa aaaaaaaaaa aaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaa aaaaaaaBest investment I made in my health!',
+      name: 'Joe S.',
+      role: 'A great trainer',
+      text: 'Duda Bueno is a great trainer for all levels and ages. He is always kind, encouraging and motivating. Duda has a great understanding of the individual client\'s needs from the beginner to the pro bodybuilder. He can also help with diet and nutrition to support your training goals. His clients range in age as well as ability. And all are well taken care of under Duda\'s guidance. I trained with Duda for about 3 years and saw great gains and a better overall physique, in my 60s!',
       rating: 5
     },
     {
-      name: 'Jessica Martinez',
-      role: 'Improved overall fitness',
-      text: 'After years of being sedentary, I finally found a trainer who understands my limitations and motivates me to overcome them. I\'m stronger and more confident!',
+      name: 'Bruna T.',
+      role: 'Best choice I\'ve made',
+      text: 'Duda Bueno is an awesome personal trainer. Best choice I\'ve made training with him. He is very friendly, professional, motivational and perfectionist with performance. Always correcting your movements so you are sure it\'s a safe workout no matter what fitness level you\'re at. I really like he gives me tips about nutrition and my daily diet. Thank you Duda Bueno for pushing us in the right track!!!',
       rating: 5
     },
     {
-      name: 'David Thompson',
-      role: 'Marathon preparation',
-      text: 'Prepared me perfectly for my first marathon. His knowledge in functional training and endurance is impressive!',
+      name: 'Carol C.',
+      role: 'I look and feel stronger and healthier',
+      text: 'I\'ve never liked working out and couldn\'t stick with it...until I started training with Duda. He is very knowledgable, supportive and motivating. Thanks to Duda I look and feel stronger and healthier. He pushes me to work harder and I could never do that without him!',
       rating: 5
     },
     {
-      name: 'Emily Rodriguez',
-      role: 'Lost 20 lbs in 3 months',
-      text: 'The nutrition planning combined with personal training was exactly what I needed. I feel healthier and more energetic than ever!',
+      name: 'Edylson',
+      role: '70 lbs in 6 months!',
+      text: 'Mr. Duda Bueno is one of the best trainers I\'ve ever had in my life. Just remembered when I was 300 pounds weight and he took the challenge to make me change it. I reduced over 70 pounds in like 6 months my body became attractive again. Together a very hard workout I improved mu body muscles and it\'s been a pleasure to see. Thank you Mr. Duda, we\'ll do my workout together soon.',
       rating: 5
     },
     {
-      name: 'James Wilson',
-      role: 'Improved strength & mobility',
-      text: 'At 55, I thought I was too old to get in shape. This trainer proved me wrong! I\'m stronger now than I was in my 30s.',
+      name: 'Bo',
+      role: 'Gave me results',
+      text: 'Training with Duda pushed me past my limits & gave me results. I thought I knew how to work out until I started training with him. Not only is he a fantastic trainer but also a great friend. He\'s been doing this for a long time & he practices what he preaches. Ps. It\'s growing time!',
+      rating: 5
+    },
+    {
+      name: 'Carolyn T.',
+      role: 'It\'s Growing Time!',
+      text: 'I met Duda through my brother and sister-in-law. They were training with him, and I saw their results and wanted that too! When we started to train, I was out of shape and overweight, had horrible eating habits, and was very weak. Duda, with his knowledge of nutrition, put me on an eating plan, and we been to work out. With his guidance, my body started to change fast. I was losing weight and gaining muscle. Not only that, but I started getting stronger. Not only physically but mentally because when you look good, you feel good! I moved out of San Diego, but the knowledge he gave me has helped me throughout the years. I\'ve met other trainers, but no one comes close to him. Duda cares about his clients; he listens to them, and when you feel like you can\'t do it, he pushes you through with encouragement. Thank you, Duda, for changing my life. "It\'s Growing time!"',
+      rating: 5
+    },
+    {
+      name: 'Joseph P.',
+      role: 'Best in San Diego',
+      text: 'Let me tell you about Duda Bueno. Hands down the best trainer in San Diego. No, he doesn\'t carry a whistle and notebook to write numbers from his stopwatch. He literally looks at your body, listens to your goals and then uses his God given talent to crate a personal training program. If you are paying someone and not getting what you expect from a trainer, meet with Duda and see if he can change your life for good! He got me from 232 down to 190!',
+      rating: 5
+    },
+    {
+      name: 'Luciano G.',
+      role: 'Duda can transform you',
+      text: 'Are you thinking U gonna die? Felling bad? Depression? Duda can help you like he helped me! Duda can transform you body, mindset and quit your depression! The hardest part of our workouts is showing up. He makes it simple for you to push yourself to be your personal best, and he gives you more. MORE results. MORE confidence. MORE Life. I really recommend.',
+      rating: 5
+    },
+    {
+      name: 'Jerry G.',
+      role: 'Walks the talk',
+      text: 'I have been training on and off with Duda for ten years. I am 65 years of age, and he has tailored various programs for me depending on my age, my abilities, my goals, and my time commitment. Duda integrates nutrition and lifestyle changes into his individualized program. I appreciate that Duda is realistic and able to meet clients like me where I am at and considers my family and work commitments. Duda is relatable with a beautiful family. He is an authentic person and walks the talk.',
+      rating: 5
+    },
+    {
+      name: 'Mark S.',
+      role: 'The Diet Matters',
+      text: 'I have been training for years! so, I\'m strong, but my body wasn\'t changing... I had fat in my mid-section and it looked like I had pencils for legs. Working one on one with Duda and following his diet has greatly improved my body composition and my life! I now how muscular legs and a trim upper body with actual abs! I\'m so stoked!',
+      rating: 5
+    },
+    {
+      name: 'Jennifer J.',
+      role: 'The Real Deal',
+      text: 'I trained with Duda online and am now in the best shape of my life! When I started I was overweight, by a lot, and now I\'m trim and fit! The best part is I can find cute clothes that fit me and I love to shop again! Thanks Duda!',
+      rating: 5
+    },
+    {
+      name: 'Nate R.',
+      role: 'Big Changes in a Short Time',
+      text: 'With Duda\'s training and diet plan, I was able to lose 20 lbs. in a couple of months! His approach worked great for me, plus he\'s the nicest person.',
       rating: 5
     }
   ];
