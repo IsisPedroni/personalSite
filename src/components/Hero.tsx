@@ -3,11 +3,6 @@ import React from 'react';
 import bannerImage from '../assets/banner.jpg';
 
 export function Hero() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center">
       <div
@@ -30,7 +25,7 @@ export function Hero() {
           Certified personal trainer in San Diego, USA - Customized training for your goals
         </p>
         <button
-          onClick={scrollToContact}
+          onClick={() => window.open('https://wa.me/18589524252', '_blank')}
           className="bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
         >
           Schedule Your Assessment

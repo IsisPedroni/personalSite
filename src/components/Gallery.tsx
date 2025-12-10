@@ -39,10 +39,7 @@ export function Gallery() {
       url: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwY29hY2hpbmd8ZW58MXx8fHwxNzY1MDI4Mzg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       alt: 'Fitness coaching'
     },
-    {
-      url: 'https://images.unsplash.com/photo-1534258936925-c58bed479fcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxneW0lMjBtb3RpdmF0aW9ufGVufDF8fHx8MTc2NTAyODM4NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-      alt: 'Gym motivation'
-    }
+    
   ];
 
   const displayedImages = showAll ? allImages : allImages.slice(0, 6);
