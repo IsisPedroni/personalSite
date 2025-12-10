@@ -5,6 +5,7 @@ import { Testimonials } from './components/Testimonials';
 import { Gallery } from './components/Gallery';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
+import React from 'react';
 
 export default function App() {
   return (

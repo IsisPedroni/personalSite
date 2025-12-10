@@ -5,3 +5,8 @@ declare module 'figma:asset/*' {
   export default src;
 }
 
+declare module '*.png';
+declare module '*.jpg';
+declare module '*.jpeg';
+declare module '*.svg';
+

@@ -1,6 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import logo from 'figma:asset/c00da63e1c0581c4cc56aa08421be0170971bc46.png';
+import React from 'react';
+import logoDuda from '../assets/logoDuda.png';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="cursor-pointer flex items-center" onClick={() => scrollToSection('hero')}>
-            <img src={logo} alt="Team Duda Bueno" className="h-10" />
+            <img src={logoDuda} alt="Team Duda Bueno" className="h-10" />
           </div>
 
           {/* Desktop Navigation */}

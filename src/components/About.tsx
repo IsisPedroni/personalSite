@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export function About() {
   const stats = [
-    { icon: Award, label: 'Years of Experience', value: '10+' },
+    { icon: Award, label: 'Years of Experience', value: '20+' },
     { icon: Users, label: 'Clients Trained', value: '500+' },
     // { icon: Target, label: 'Success Rate', value: '95%' },
     // { icon: TrendingUp, label: 'Certifications', value: '8' }
@@ -20,13 +20,13 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1734189605012-f03d97a4d98f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhaW5pbmclMjB3b3Jrb3V0fGVufDF8fHx8MTc2NTAzMjA3Mnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
               alt="Personal Trainer"
               className="rounded-lg shadow-xl w-full h-[500px] object-cover"
             />
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -35,21 +35,18 @@ export function About() {
           >
             <h2 className="mb-6">About Me</h2>
             <p className="mb-4 text-gray-700">
-              Hi! I'm a certified personal trainer with over 10 years of experience helping people achieve their fitness goals in Santiago, USA.
-            </p>
-            <p className="mb-4 text-gray-700">
-              My mission is to transform lives through personalized exercise, proper nutrition, and constant motivation. I believe that each person is unique and deserves a training plan adapted to their specific needs.
+              My name is Duda Bueno and I'm a personal trainer born and raised in Brazil. I have been in San Diego for 20+ years and I've been training people of all ages and levels for 30 years. I was a competitive bodybuilder for 10 years and I am also a prep coach for bodybuilders, figure, bikini and classic physique competitors. I have done, as you can see on my website and Instagram, many body transformations with personalized diet plans and training.
             </p>
             <p className="mb-8 text-gray-700">
-              Specialized in weight loss, muscle gain, athletic conditioning, and functional training. Let's build the best version of you together!
+              I offer one on one personal training, Group training, and online training programs that include diet and workout plans. It doesn't matter what your age or "genetics," I can help you to be stronger and healthier to have a better quality of life!
             </p>
 
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => {
                 const Icon = stat.icon;
                 return (
-                  <motion.div 
-                    key={index} 
+                  <motion.div
+                    key={index}
                     className="text-center p-4 bg-white rounded-lg shadow"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

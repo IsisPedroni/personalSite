@@ -1,6 +1,7 @@
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
-import logo from 'figma:asset/c00da63e1c0581c4cc56aa08421be0170971bc46.png';
 import { motion } from 'framer-motion';
+import React from 'react';
+import logoDuda from '../assets/logoDuda.png';
 
 export function Footer() {
   const scrollToSection = (id: string) => {
@@ -87,7 +88,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-12 pt-12 border-t border-gray-800">
           {/* Logo and Description */}
           <div className="md:col-span-1">
-            <img src={logo} alt="Team Duda Bueno" className="h-10 mb-4" />
+            <img src={logoDuda} alt="Team Duda Bueno" className="h-10 mb-4" />
             <p className="text-gray-300 text-sm">
               Transforming lives through personalized fitness training in Santiago, USA.
             </p>
