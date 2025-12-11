@@ -92,7 +92,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <img src={logoDuda} alt="Team Duda Bueno" className="h-10 mb-4" />
             <p className="text-gray-300 text-sm">
-              Transforming lives through personalized fitness training in Santiago, USA.
+              Transforming lives through personalized fitness training in San Diego, USA.
             </p>
           </div>
 
