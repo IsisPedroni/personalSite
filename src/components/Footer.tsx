@@ -35,6 +35,7 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              onClick={() => window.open('https://wa.me/18589524252', '_blank')}
             >
               <Phone className="text-white mx-auto mb-3" size={28} />
               <div className="text-white mb-2">Phone</div>
@@ -47,6 +48,7 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
+              onClick={() => window.open('mailto:duda_munaia@hotmail.com', '_blank')}
             >
               <Mail className="text-white mx-auto mb-2" size={24} />
               <div className="mb-2 text-white font-semibold">Email</div>
