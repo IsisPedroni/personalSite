@@ -32,7 +32,7 @@ export function Navigation() {
               Testimonials
             </button>
             <button onClick={() => scrollToSection('gallery')} className="hover:text-gray-300 transition-colors">
-              Cases
+              Transformations
             </button>
             <button onClick={() => scrollToSection('contact')} className="hover:text-gray-300 transition-colors">
               Contact
@@ -73,7 +73,7 @@ export function Navigation() {
               onClick={() => scrollToSection('gallery')} 
               className="block w-full text-left hover:text-gray-300 transition-colors"
             >
-              Cases
+              Transformations
             </button>
             <button 
               onClick={() => scrollToSection('contact')} 

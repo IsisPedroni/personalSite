@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, X } from 'lucide-react';
-import image1 from '../assets/1 (1).jpg';
 import image2 from '../assets/1 (2).jpg';
-import image3 from '../assets/1 (3).jpg';
-import image4 from '../assets/1 (4).jpg';
-import image5 from '../assets/1 (5).jpg';
-import image6 from '../assets/1 (6).jpg';
 import image7 from '../assets/1 (7).jpg';
 import image8 from '../assets/1 (8).jpg';
 import image9 from '../assets/1 (9).jpg';
@@ -23,31 +18,11 @@ import image19 from '../assets/1 (19).jpg';
 
 export function Gallery() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-  
+
   const allImages = [
-    {
-      url: image1,
-      alt: 'Training equipment'
-    },
     {
       url: image2,
       alt: 'Weight lifting'
-    },
-    {
-      url: image3,
-      alt: 'Outdoor training'
-    },
-    {
-      url: image4,
-      alt: 'Training session'
-    },
-    {
-      url: image5,
-      alt: 'Fitness workout'
-    },
-    {
-      url: image6,
-      alt: 'Gym training'
     },
     {
       url: image7,
@@ -129,14 +104,14 @@ export function Gallery() {
   return (
     <section id="gallery" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="mb-4">Cases</h2>
+          <h2 className="mb-4">Transformations</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Check out some moments from our training sessions and transformations
           </p>
@@ -144,8 +119,8 @@ export function Gallery() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedImages.map((image, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="relative overflow-hidden rounded-lg aspect-square group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -153,8 +128,8 @@ export function Gallery() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => setIsGalleryOpen(true)}
             >
-              <img 
-                src={image.url} 
+              <img
+                src={image.url}
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -162,7 +137,7 @@ export function Gallery() {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           className="flex justify-center mt-12"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

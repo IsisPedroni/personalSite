@@ -1,7 +1,7 @@
 import React from 'react';
 import { Award, Target, Users, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
-import aboutImage from '../assets/2.jpg';
+import aboutImage from '../assets/dudaBueno.jpeg';
 
 export function About() {
   const stats = [

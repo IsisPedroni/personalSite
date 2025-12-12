@@ -131,7 +131,7 @@ export function Footer() {
                   onClick={() => scrollToSection('gallery')}
                   className="text-gray-300 hover:text-white transition-colors text-sm"
                 >
-                  Cases
+                  Transformations
                 </button>
               </li>
             </ul>
