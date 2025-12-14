@@ -13,7 +13,7 @@ import image15 from '../assets/1 (15).jpg';
 import image16 from '../assets/1 (16).jpg';
 import image17 from '../assets/1 (17).jpg';
 import image18 from '../assets/1 (18).jpg';
-import image19 from '../assets/1 (19).jpg';
+import image19 from '../assets/4.jpeg';
 import newImage1 from '../assets/2 (1).jpeg';
 import newImage2 from '../assets/2 (2).jpeg';
 import newImage3 from '../assets/2 (3).jpeg';
@@ -40,13 +40,45 @@ import video2 from '../assets/2 (2).mp4';
 import video3 from '../assets/2 (3).mp4';
 import video4 from '../assets/2 (4).mp4';
 import video5 from '../assets/2 (5).mp4';
+import video3_1 from '../assets/3 (1).mp4';
+import video3_2 from '../assets/3 (2).mp4';
+import image3_1 from '../assets/3 (1).jpeg';
+import image3_2 from '../assets/3 (2).jpeg';
+import image3_3 from '../assets/3 (3).jpeg';
+import image3_4 from '../assets/3 (4).jpeg';
+import image3_5 from '../assets/3 (5).jpeg';
+import image3_6 from '../assets/3 (6).jpeg';
+import image3_7 from '../assets/3 (7).jpeg';
+import image3_8 from '../assets/3 (8).jpeg';
+import image3_9 from '../assets/3 (9).jpeg';
+import image3_10 from '../assets/3 (10).jpeg';
+import image3_11 from '../assets/3 (11).jpeg';
+import image3_12 from '../assets/3 (12).jpeg';
+import image3_13 from '../assets/3 (13).jpeg';
+import image3_14 from '../assets/3 (14).jpeg';
+import image3_15 from '../assets/3 (15).jpeg';
+import image3_16 from '../assets/3 (16).jpeg';
+import image3_17 from '../assets/3 (17).jpeg';
+import image3_18 from '../assets/3 (18).jpeg';
+import image3_19 from '../assets/3 (19).jpeg';
+import image3_20 from '../assets/3 (20).jpeg';
+import image3_21 from '../assets/3 (21).jpeg';
+import image3_22 from '../assets/3 (22).jpeg';
+import image3_23 from '../assets/3 (23).jpeg';
+import image3_24 from '../assets/3 (24).jpeg';
+import image3_25 from '../assets/3 (25).jpeg';
+import image3_26 from '../assets/3 (26).jpeg';
+import image3_27 from '../assets/3 (27).jpeg';
+import image3_28 from '../assets/3 (28).jpeg';
+import image3_29 from '../assets/3 (29).jpeg';
+import image5 from '../assets/5.jpeg';
 
 export function Gallery() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const allImages = [
-   
+
     {
       url: image7,
       alt: 'Gym session',
@@ -64,16 +96,6 @@ export function Gallery() {
     },
     {
       url: image10,
-      alt: 'Fitness coaching',
-      type: 'image'
-    },
-    {
-      url: image11,
-      alt: 'Fitness coaching',
-      type: 'image'
-    },
-    {
-      url: image12,
       alt: 'Fitness coaching',
       type: 'image'
     },
@@ -117,11 +139,11 @@ export function Gallery() {
       alt: 'Fitness transformation',
       type: 'image'
     },
-    {
-      url: newImage2,
-      alt: 'Fitness transformation',
-      type: 'image'
-    },
+    // {
+    //   url: newImage2,
+    //   alt: 'Fitness transformation',
+    //   type: 'image'
+    // },
     {
       url: newImage3,
       alt: 'Fitness transformation',
@@ -241,6 +263,166 @@ export function Gallery() {
       url: video5,
       alt: 'Fitness video',
       type: 'video'
+    },
+    {
+      url: video3_1,
+      alt: 'Fitness video',
+      type: 'video'
+    },
+    {
+      url: video3_2,
+      alt: 'Fitness video',
+      type: 'video'
+    },
+    {
+      url: image3_1,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_2,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_3,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_4,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_5,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_6,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_7,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_8,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_9,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_10,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_11,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_12,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_13,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_14,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_15,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_16,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_17,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_18,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_19,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_20,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_21,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_22,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_23,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_24,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_25,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_26,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_27,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_28,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image3_29,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: image5,
+      alt: 'Fitness transformation',
+      type: 'image'
     },
   ];
 
