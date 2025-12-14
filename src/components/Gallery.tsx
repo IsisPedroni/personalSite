@@ -359,7 +359,7 @@ export function Gallery() {
             style={{ height: '100vh', overflowY: 'auto' }}
           >
             {/* Header with close button */}
-            <div className="sticky top-0 z-10 flex justify-between items-center p-6 bg-black bg-opacity-90 backdrop-blur-sm">
+            <div className="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-6 bg-black bg-opacity-90 backdrop-blur-sm">
               <h3 className="text-white text-2xl font-bold">Full Gallery</h3>
               <button
                 onClick={() => setIsGalleryOpen(false)}
@@ -371,7 +371,7 @@ export function Gallery() {
             </div>
 
             {/* Grid with scroll */}
-            <div className="max-w-7xl mx-auto px-4 py-8">
+            <div className="max-w-7xl mx-auto px-4 py-8 pt-24">
               <motion.div
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
                 initial={{ opacity: 0, y: 20 }}
