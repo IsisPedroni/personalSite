@@ -1,12 +1,25 @@
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
 import logoDuda from '../assets/logoDuda.png';
 
 export function Footer() {
+  const [copied, setCopied] = useState(false);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const copyPhone = async () => {
+    const phoneNumber = '858-952-4252';
+    try {
+      await navigator.clipboard.writeText(phoneNumber);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
   };
 
   return (
@@ -30,16 +43,30 @@ export function Footer() {
 
 
             <motion.div
-              className="bg-gray-900 p-6 rounded-lg"
+              className="bg-gray-900 p-6 rounded-lg cursor-pointer relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-             
+              onClick={copyPhone}
             >
               <Phone className="text-white mx-auto mb-3" size={28} />
               <div className="text-white mb-2">Phone</div>
-              <a rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">858-952-4252</a>
+              <div className="text-gray-300 hover:text-white transition-colors">
+                858-952-4252
+              </div>
+              <AnimatePresence>
+                {copied && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap z-20"
+                  >
+                    Copied!
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
 
             <motion.div
@@ -48,11 +75,11 @@ export function Footer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              onClick={() => window.open('mailto:duda_munaia@hotmail.com', '_blank')}
+              onClick={() => window.open('mailto:dudabuenofitness@gmail.com', '_blank')}
             >
               <Mail className="text-white mx-auto mb-2" size={24} />
               <div className="mb-2 text-white font-semibold">Email</div>
-              <a href="mailto:duda_munaia@hotmail.com" className="text-gray-300 hover:text-white transition-colors break-all">duda_munaia@hotmail.com</a>
+              <a href="mailto:dudabuenofitness@gmail.com" className="text-gray-300 hover:text-white transition-colors break-all">dudabuenofitness@gmail.com</a>
             </motion.div>
 
             <motion.div
