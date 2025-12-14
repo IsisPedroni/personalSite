@@ -5,8 +5,8 @@ import aboutImage from '../assets/dudaBueno.jpeg';
 
 export function About() {
   const stats = [
-    { icon: Award, label: 'Years of Experience', value: '20+' },
-    { icon: Users, label: 'Clients Trained', value: '500+' },
+    { icon: Award, label: 'Years of Experience', value: '30+' },
+    // { icon: Users, label: 'Clients Trained', value: '500+' },
 
   ];
 
