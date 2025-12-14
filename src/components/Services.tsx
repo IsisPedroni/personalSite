@@ -19,13 +19,13 @@ export function Services() {
 
     },
     {
-      image: weightImage,
+      image: haletresImage,
       title: '1 hour Single Session',
       price: '$75.00',
       description: 'This is a great option if yout looking for a one on one private session to focus on specific area or goals.',
     },
     {
-      image: haletresImage,
+      image: weightImage,
       title: 'Online Diet & Workout Plan',
       price: '$350.00',
       description: "Can't make it to the gym or don't live in San Diego? No problem! I offer a monthly plan where I can coach you anywhere in the world with daily/weekly check ins and I will provide a customized diet plan and workout that caters to your specific goals and needs.",
