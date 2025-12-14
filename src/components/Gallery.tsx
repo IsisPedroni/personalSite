@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Plus, X } from 'lucide-react';
+import { Plus, X, Play } from 'lucide-react';
 import image7 from '../assets/1 (7).jpg';
 import image8 from '../assets/1 (8).jpg';
 import image9 from '../assets/1 (9).jpg';
@@ -306,13 +306,20 @@ export function Gallery() {
               }}
             >
               {image.type === 'video' ? (
-                <video
-                  src={image.url}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  muted
-                  loop
-                  playsInline
-                />
+                <>
+                  <video
+                    src={image.url}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 pointer-events-none"
+                    muted
+                    loop
+                    playsInline
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="bg-white bg-opacity-80 rounded-full p-4 group-hover:scale-110 transition-transform shadow-lg pointer-events-none">
+                      <Play className="text-black" size={32} fill="black" />
+                    </div>
+                  </div>
+                </>
               ) : (
                 <img
                   src={image.url}
@@ -380,20 +387,28 @@ export function Gallery() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
+                    onClick={() => {
+                      if (image.type === 'video') {
+                        setIsGalleryOpen(false);
+                        setSelectedVideo(image.url);
+                      }
+                    }}
                   >
                     {image.type === 'video' ? (
-                      <video
-                        src={image.url}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        muted
-                        loop
-                        playsInline
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsGalleryOpen(false);
-                          setSelectedVideo(image.url);
-                        }}
-                      />
+                      <>
+                        <video
+                          src={image.url}
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 pointer-events-none"
+                          muted
+                          loop
+                          playsInline
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                          <div className="bg-white bg-opacity-80 rounded-full p-3 group-hover:scale-110 transition-transform shadow-lg pointer-events-none">
+                            <Play className="text-black" size={24} fill="black" />
+                          </div>
+                        </div>
+                      </>
                     ) : (
                       <img
                         src={image.url}
