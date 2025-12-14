@@ -389,7 +389,6 @@ export function Gallery() {
                     whileHover={{ scale: 1.05 }}
                     onClick={() => {
                       if (image.type === 'video') {
-                        setIsGalleryOpen(false);
                         setSelectedVideo(image.url);
                       }
                     }}
