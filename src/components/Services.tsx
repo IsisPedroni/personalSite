@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import pesoImage from '../assets/peso.webp';
-import weightImage from '../assets/weight.jpg';
+import weightImage from '../assets/online.jpg';
 import haletresImage from '../assets/haletres.webp';
 
 export function Services() {

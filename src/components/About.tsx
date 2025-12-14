@@ -4,11 +4,6 @@ import { motion } from 'framer-motion';
 import aboutImage from '../assets/dudaBueno.jpeg';
 
 export function About() {
-  const stats = [
-    { icon: Award, label: 'Years of Experience', value: '30+' },
-    // { icon: Users, label: 'Clients Trained', value: '500+' },
-
-  ];
 
   return (
     <section id="about" className="py-20 bg-gray-50">
@@ -42,25 +37,7 @@ export function About() {
               I work with all levels of clients from someone that may be their first time training to another that is at a competition level and wants to get on a stage.
               Through them all, I thrive on helping you get HEALTHY so you're not only looking great but feeling better more than anything else!            </p>
 
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    className="text-center p-4 bg-white rounded-lg shadow"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                  >
-                    <Icon className="mx-auto mb-2 text-black" size={32} />
-                    <div className="text-black mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </motion.div>
-                );
-              })}
-            </div>
+           
           </motion.div>
         </div>
       </div>
