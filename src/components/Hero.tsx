@@ -1,8 +1,12 @@
 import { ArrowRight } from 'lucide-react';
-import React from 'react';
-import bannerImage from '../assets/banner.jpg';
+import bannerImage from '../assets/logoDuda.png';
 
 export function Hero() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center">
       <div
@@ -11,24 +15,24 @@ export function Hero() {
           backgroundImage: `url(${bannerImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          filter: 'brightness(0.4)'
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        <h1 className="mb-6 text-white">
-          Transform Your Body,<br />Transform Your Life
-        </h1>
-        <p className="mb-8 text-xl opacity-90">
-          Certified personal trainer in San Diego, USA - Customized training for your goals
-        </p>
+        <h6 className="mb-6" style={{ color: '#B5E6FE', fontSize: '24px', fontWeight: 'bold' }}>
+          ELEVATE YOUR FITNESS JOURNEY
+        </h6>
+        <p className="mb-8 text-base opacity-90">
+          Embark on your fitness journey with expert guidance and state-of-the-art equipment that gets you RESULTS. Iprovide personalized training and diet plans to transform your total health and overall well-being so you can look and feel your best at any age.        </p>
         <button
-          onClick={() => window.open('https://wa.me/18589524252', '_blank')}
+          onClick={() => scrollToSection('contact')}
           className="bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
         >
-          Schedule Your Assessment
+          Contact me
           <ArrowRight size={20} />
         </button>
       </div>

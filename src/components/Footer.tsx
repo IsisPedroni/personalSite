@@ -39,7 +39,7 @@ export function Footer() {
             >
               <Phone className="text-white mx-auto mb-3" size={28} />
               <div className="text-white mb-2">Phone</div>
-              <a href="https://wa.me/18589524252" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">858-952-4252</a>
+              <a rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">858-952-4252</a>
             </motion.div>
 
             <motion.div
