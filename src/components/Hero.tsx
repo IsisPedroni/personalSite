@@ -9,17 +9,17 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center">
+      <div className="absolute inset-0 bg-black"></div>
       <div
         className="absolute inset-0"
         style={{
           backgroundImage: `url(${bannerImage})`,
-          backgroundSize: 'cover',
+          backgroundSize: 'contain',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          filter: 'brightness(0.4)'
+          filter: 'brightness(0.3)'
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
@@ -32,8 +32,8 @@ export function Hero() {
           onClick={() => scrollToSection('contact')}
           className="bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
         >
-          Contact me
-          <ArrowRight size={20} />
+          Phone: 858-952-4252
+          {/* <ArrowRight size={20} /> */}
         </button>
       </div>
     </section>
