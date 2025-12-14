@@ -12,7 +12,7 @@ export function Footer() {
   };
 
   const copyPhone = async () => {
-    const phoneNumber = '858-952-4252';
+    const phoneNumber = '+1 858 952 4252';
     try {
       await navigator.clipboard.writeText(phoneNumber);
       setCopied(true);
@@ -53,7 +53,7 @@ export function Footer() {
               <Phone className="text-white mx-auto mb-3" size={28} />
               <div className="text-white mb-2">Phone</div>
               <div className="text-gray-300 hover:text-white transition-colors">
-                858-952-4252
+                +1 858 952 4252
               </div>
               <AnimatePresence>
                 {copied && (

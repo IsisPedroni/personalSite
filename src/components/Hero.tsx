@@ -6,7 +6,7 @@ export function Hero() {
   const [copied, setCopied] = useState(false);
 
   const copyPhone = async () => {
-    const phoneNumber = '858-952-4252';
+    const phoneNumber = '+1 858 952 4252';
     try {
       await navigator.clipboard.writeText(phoneNumber);
       setCopied(true);
@@ -42,7 +42,7 @@ export function Hero() {
             onClick={copyPhone}
             className="bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
           >
-            Phone: 858-952-4252
+            Phone: +1 858 952 4252
           </button>
           <AnimatePresence>
             {copied && (
