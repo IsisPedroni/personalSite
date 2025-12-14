@@ -390,6 +390,7 @@ export function Gallery() {
                         playsInline
                         onClick={(e) => {
                           e.stopPropagation();
+                          setIsGalleryOpen(false);
                           setSelectedVideo(image.url);
                         }}
                       />
@@ -412,16 +413,17 @@ export function Gallery() {
       <AnimatePresence>
         {selectedVideo && (
           <motion.div
-            className="fixed inset-0 z-[60] bg-black bg-opacity-95 flex items-center justify-center"
+            className="fixed inset-0 z-[9999] bg-black bg-opacity-80 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedVideo(null)}
+            style={{ zIndex: 9999 }}
           >
-            <div className="relative w-full max-w-6xl mx-4">
+            <div className="relative max-w-4xl w-full">
               <button
                 onClick={() => setSelectedVideo(null)}
-                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+                className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors z-10"
                 aria-label="Close video"
               >
                 <X size={32} />
@@ -432,11 +434,11 @@ export function Gallery() {
                 exit={{ scale: 0.9, opacity: 0 }}
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
-                className="relative"
+                className="relative bg-black rounded-lg overflow-hidden"
               >
                 <video
                   src={selectedVideo}
-                  className="w-full h-auto rounded-lg"
+                  className="w-full h-auto max-h-[80vh] rounded-lg"
                   controls
                   autoPlay
                   playsInline
