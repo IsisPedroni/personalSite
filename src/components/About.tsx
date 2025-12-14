@@ -35,11 +35,12 @@ export function About() {
           >
             <h2 className="mb-6">About Me</h2>
             <p className="mb-4 text-gray-700">
-              My name is Duda Bueno and I'm a personal trainer born and raised in Brazil. I have been in San Diego for 30+ years and I've been training people of all ages and levels for 30 years. I was a competitive bodybuilder for 10 years and I am also a prep coach for bodybuilders, figure, bikini and classic physique competitors. I have done, as you can see on my website and Instagram, many body transformations with personalized diet plans and training.
-            </p>
+              Hi, I'm Duda Bueno—a personal trainer originally from Brazil and proudly based in San Diego for more than 25 years. With over 30 years of experience coaching clients of all ages and fitness levels, my mission is to help you build real, lasting strength and health from the inside out.            </p>
             <p className="mb-8 text-gray-700">
-              I offer one on one personal training, Group training, and online training programs that include diet and workout plans. It doesn't matter what your age or "genetics," I can help you to be stronger and healthier to have a better quality of life!
-            </p>
+              I competed in bodybuilding for over 10 years and know what it takes to get you to ANY desired level.
+              With the knowledge I have gained from both school and personal experiences I have supported countless clients through full body transformations using personalized training and tailored nutrition programs.
+              I work with all levels of clients from someone that may be their first time training to another that is at a competition level and wants to get on a stage.
+              Through them all, I thrive on helping you get HEALTHY so you're not only looking great but feeling better more than anything else!            </p>
 
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => {
