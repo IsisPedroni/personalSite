@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, X } from 'lucide-react';
-import image2 from '../assets/1 (2).jpg';
 import image7 from '../assets/1 (7).jpg';
 import image8 from '../assets/1 (8).jpg';
 import image9 from '../assets/1 (9).jpg';
@@ -15,66 +14,233 @@ import image16 from '../assets/1 (16).jpg';
 import image17 from '../assets/1 (17).jpg';
 import image18 from '../assets/1 (18).jpg';
 import image19 from '../assets/1 (19).jpg';
+import newImage1 from '../assets/2 (1).jpeg';
+import newImage2 from '../assets/2 (2).jpeg';
+import newImage3 from '../assets/2 (3).jpeg';
+import newImage4 from '../assets/2 (4).jpeg';
+import newImage5 from '../assets/2 (5).jpeg';
+import newImage6 from '../assets/2 (6).jpeg';
+import newImage7 from '../assets/2 (7).jpeg';
+import newImage8 from '../assets/2 (8).jpeg';
+import newImage9 from '../assets/2 (9).jpeg';
+import newImage10 from '../assets/2 (10).jpeg';
+import newImage11 from '../assets/2 (11).jpeg';
+import newImage12 from '../assets/2 (12).jpeg';
+import newImage13 from '../assets/2 (13).jpeg';
+import newImage14 from '../assets/2 (14).jpeg';
+import newImage15 from '../assets/2 (15).jpeg';
+import newImage16 from '../assets/2 (16).jpeg';
+import newImage17 from '../assets/2 (17).jpeg';
+import newImage18 from '../assets/2 (18).jpeg';
+import newImage19 from '../assets/2 (19).jpeg';
+import newImage20 from '../assets/2 (20).jpeg';
+import newImage21 from '../assets/2 (21).jpeg';
+import video1 from '../assets/2 (1).mp4';
+import video2 from '../assets/2 (2).mp4';
+import video3 from '../assets/2 (3).mp4';
+import video4 from '../assets/2 (4).mp4';
+import video5 from '../assets/2 (5).mp4';
 
 export function Gallery() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const allImages = [
-    {
-      url: image2,
-      alt: 'Weight lifting'
-    },
+   
     {
       url: image7,
-      alt: 'Gym session'
+      alt: 'Gym session',
+      type: 'image'
     },
     {
       url: image8,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image9,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image10,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image11,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image12,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image13,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image14,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image15,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image16,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image17,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image18,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
     },
     {
       url: image19,
-      alt: 'Fitness coaching'
+      alt: 'Fitness coaching',
+      type: 'image'
+    },
+    {
+      url: newImage1,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage2,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage3,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage4,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage5,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage6,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage7,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage8,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage9,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage10,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage11,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage12,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage13,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage14,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage15,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage16,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage17,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage18,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage19,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage20,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: newImage21,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+    {
+      url: video1,
+      alt: 'Fitness video',
+      type: 'video'
+    },
+    {
+      url: video2,
+      alt: 'Fitness video',
+      type: 'video'
+    },
+    {
+      url: video3,
+      alt: 'Fitness video',
+      type: 'video'
+    },
+    {
+      url: video4,
+      alt: 'Fitness video',
+      type: 'video'
+    },
+    {
+      url: video5,
+      alt: 'Fitness video',
+      type: 'video'
     },
   ];
 
@@ -82,16 +248,21 @@ export function Gallery() {
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (!isGalleryOpen) return;
-      if (e.key === 'Escape') setIsGalleryOpen(false);
+      if (e.key === 'Escape') {
+        if (selectedVideo) {
+          setSelectedVideo(null);
+        } else if (isGalleryOpen) {
+          setIsGalleryOpen(false);
+        }
+      }
     };
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isGalleryOpen]);
+  }, [isGalleryOpen, selectedVideo]);
 
   useEffect(() => {
-    if (isGalleryOpen) {
+    if (isGalleryOpen || selectedVideo) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -99,7 +270,7 @@ export function Gallery() {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isGalleryOpen]);
+  }, [isGalleryOpen, selectedVideo]);
 
   return (
     <section id="gallery" className="py-20 bg-gray-50">
@@ -126,13 +297,29 @@ export function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => setIsGalleryOpen(true)}
+              onClick={() => {
+                if (image.type === 'video') {
+                  setSelectedVideo(image.url);
+                } else {
+                  setIsGalleryOpen(true);
+                }
+              }}
             >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
+              {image.type === 'video' ? (
+                <video
+                  src={image.url}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+              )}
             </motion.div>
           ))}
         </div>
@@ -194,13 +381,66 @@ export function Gallery() {
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
                   >
-                    <img
-                      src={image.url}
-                      alt={image.alt}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
+                    {image.type === 'video' ? (
+                      <video
+                        src={image.url}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        muted
+                        loop
+                        playsInline
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedVideo(image.url);
+                        }}
+                      />
+                    ) : (
+                      <img
+                        src={image.url}
+                        alt={image.alt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    )}
                   </motion.div>
                 ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Video Modal */}
+      <AnimatePresence>
+        {selectedVideo && (
+          <motion.div
+            className="fixed inset-0 z-[60] bg-black bg-opacity-95 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedVideo(null)}
+          >
+            <div className="relative w-full max-w-6xl mx-4">
+              <button
+                onClick={() => setSelectedVideo(null)}
+                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+                aria-label="Close video"
+              >
+                <X size={32} />
+              </button>
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative"
+              >
+                <video
+                  src={selectedVideo}
+                  className="w-full h-auto rounded-lg"
+                  controls
+                  autoPlay
+                  playsInline
+                />
               </motion.div>
             </div>
           </motion.div>
