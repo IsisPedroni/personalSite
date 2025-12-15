@@ -88,13 +88,14 @@ export function MyBuilder() {
   };
 
   return (
-    <section className="py-20 px-6 bg-gray-50 overflow-hidden">
+    <section className="py-20 px-6 bg-white overflow-hidden ">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="mb-4">My Builder</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="mb-4">Bodybuilding years</h2>
+        
+          {/* <p className="text-gray-600 max-w-2xl mx-auto">
             texto
-          </p>
+          </p> */}
         </div>
 
         <div className="relative overflow-hidden">
