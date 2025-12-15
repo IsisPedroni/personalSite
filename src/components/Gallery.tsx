@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Plus, X, Play } from 'lucide-react';
+import { Plus, X } from 'lucide-react';
 import image7 from '../assets/1 (7).jpg';
 import image8 from '../assets/1 (8).jpg';
 import image9 from '../assets/1 (9).jpg';
@@ -35,13 +35,6 @@ import newImage18 from '../assets/2 (18).jpeg';
 import newImage19 from '../assets/2 (19).jpeg';
 import newImage20 from '../assets/2 (20).jpeg';
 import newImage21 from '../assets/2 (21).jpeg';
-import video1 from '../assets/2 (1).mp4';
-import video2 from '../assets/2 (2).mp4';
-import video3 from '../assets/2 (3).mp4';
-import video4 from '../assets/2 (4).mp4';
-import video5 from '../assets/2 (5).mp4';
-import video3_1 from '../assets/3 (1).mp4';
-import video3_2 from '../assets/3 (2).mp4';
 import image3_1 from '../assets/3 (1).jpeg';
 import image3_2 from '../assets/3 (2).jpeg';
 import image3_3 from '../assets/3 (3).jpeg';
@@ -75,7 +68,6 @@ import image5 from '../assets/5.jpeg';
 
 export function Gallery() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
   const allImages = [
 
@@ -240,41 +232,6 @@ export function Gallery() {
       type: 'image'
     },
     {
-      url: video1,
-      alt: 'Fitness video',
-      type: 'video'
-    },
-    {
-      url: video2,
-      alt: 'Fitness video',
-      type: 'video'
-    },
-    {
-      url: video3,
-      alt: 'Fitness video',
-      type: 'video'
-    },
-    {
-      url: video4,
-      alt: 'Fitness video',
-      type: 'video'
-    },
-    {
-      url: video5,
-      alt: 'Fitness video',
-      type: 'video'
-    },
-    {
-      url: video3_1,
-      alt: 'Fitness video',
-      type: 'video'
-    },
-    {
-      url: video3_2,
-      alt: 'Fitness video',
-      type: 'video'
-    },
-    {
       url: image3_1,
       alt: 'Fitness transformation',
       type: 'image'
@@ -430,21 +387,17 @@ export function Gallery() {
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        if (selectedVideo) {
-          setSelectedVideo(null);
-        } else if (isGalleryOpen) {
-          setIsGalleryOpen(false);
-        }
+      if (e.key === 'Escape' && isGalleryOpen) {
+        setIsGalleryOpen(false);
       }
     };
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [isGalleryOpen, selectedVideo]);
+  }, [isGalleryOpen]);
 
   useEffect(() => {
-    if (isGalleryOpen || selectedVideo) {
+    if (isGalleryOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -452,7 +405,7 @@ export function Gallery() {
     return () => {
       document.body.style.overflow = 'unset';
     };
-  }, [isGalleryOpen, selectedVideo]);
+  }, [isGalleryOpen]);
 
   return (
     <section id="gallery" className="py-20 bg-gray-50">
@@ -479,36 +432,13 @@ export function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => {
-                if (image.type === 'video') {
-                  setSelectedVideo(image.url);
-                } else {
-                  setIsGalleryOpen(true);
-                }
-              }}
+              onClick={() => setIsGalleryOpen(true)}
             >
-              {image.type === 'video' ? (
-                <>
-                  <video
-                    src={image.url}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 pointer-events-none"
-                    muted
-                    loop
-                    playsInline
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="bg-white bg-opacity-80 rounded-full p-4 group-hover:scale-110 transition-transform shadow-lg pointer-events-none">
-                      <Play className="text-black" size={32} fill="black" />
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              )}
+              <img
+                src={image.url}
+                alt={image.alt}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
             </motion.div>
           ))}
         </div>
@@ -569,34 +499,12 @@ export function Gallery() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05 }}
-                    onClick={() => {
-                      if (image.type === 'video') {
-                        setSelectedVideo(image.url);
-                      }
-                    }}
                   >
-                    {image.type === 'video' ? (
-                      <>
-                        <video
-                          src={image.url}
-                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110 pointer-events-none"
-                          muted
-                          loop
-                          playsInline
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <div className="bg-white bg-opacity-80 rounded-full p-3 group-hover:scale-110 transition-transform shadow-lg pointer-events-none">
-                            <Play className="text-black" size={24} fill="black" />
-                          </div>
-                        </div>
-                      </>
-                    ) : (
-                      <img
-                        src={image.url}
-                        alt={image.alt}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                    )}
+                    <img
+                      src={image.url}
+                      alt={image.alt}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
                   </motion.div>
                 ))}
               </motion.div>
@@ -605,45 +513,6 @@ export function Gallery() {
         )}
       </AnimatePresence>
 
-      {/* Video Modal */}
-      <AnimatePresence>
-        {selectedVideo && (
-          <motion.div
-            className="fixed inset-0 z-[9999] bg-black bg-opacity-80 flex items-center justify-center p-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedVideo(null)}
-            style={{ zIndex: 9999 }}
-          >
-            <div className="relative max-w-4xl w-full">
-              <button
-                onClick={() => setSelectedVideo(null)}
-                className="absolute -top-10 right-0 text-white hover:text-gray-300 transition-colors z-10"
-                aria-label="Close video"
-              >
-                <X size={32} />
-              </button>
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                onClick={(e) => e.stopPropagation()}
-                className="relative bg-black rounded-lg overflow-hidden"
-              >
-                <video
-                  src={selectedVideo}
-                  className="w-full h-auto max-h-[80vh] rounded-lg"
-                  controls
-                  autoPlay
-                  playsInline
-                />
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

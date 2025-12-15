@@ -91,35 +91,36 @@ export function MyBuilder() {
     <section className="py-20 px-6 bg-white overflow-hidden ">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="mb-4">Bodybuilding years</h2>
+          <h2 className="mb-4 text-5xl md:text-6xl font-black" style={{ fontSize: '1.3rem', fontWeight: '500' }}>Bodybuilding years</h2>
+
         
           {/* <p className="text-gray-600 max-w-2xl mx-auto">
             texto
           </p> */}
         </div>
 
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden mybuilder-carousel">
           <style>{`
-            .slick-slide > div {
+            .mybuilder-carousel .slick-slide > div {
               padding: 0 8px;
               height: 100%;
             }
-            .slick-slide {
+            .mybuilder-carousel .slick-slide {
               margin: 0;
               height: 550px;
             }
-            .slick-list {
+            .mybuilder-carousel .slick-list {
               margin: 0 -8px;
               overflow: hidden;
             }
-            .slick-track {
+            .mybuilder-carousel .slick-track {
               display: flex;
               align-items: stretch;
             }
-            .slick-slide > div > div {
+            .mybuilder-carousel .slick-slide > div > div {
               height: 100%;
             }
-            .slick-slider {
+            .mybuilder-carousel .slick-slider {
               position: relative;
               overflow: hidden;
             }
