@@ -93,8 +93,7 @@ export function MyBuilder() {
         <div className="text-center mb-12">
           <h2 className="mb-4">My Builder</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Conheça alguns dos nossos projetos mais recentes e veja como transformamos 
-            ideias em construções excepcionais
+            texto
           </p>
         </div>
 
