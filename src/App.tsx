@@ -5,6 +5,7 @@ import { Testimonials } from './components/Testimonials';
 import { Gallery } from './components/Gallery';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
+import { MyBuilder } from './components/MyBuilder';
 import React from 'react';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Navigation />
       <Hero />
       <About />
+      <MyBuilder />
       <Services />
       <Testimonials />
       <Gallery />
