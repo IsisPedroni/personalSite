@@ -52,7 +52,7 @@ export function Testimonials() {
     {
       name: 'Joseph P.',
       role: 'Best in San Diego',
-      text: 'Let me tell you about Duda Bueno. Hands down the best trainer in San Diego. No, he doesn\'t carry a whistle and notebook to write numbers from his stopwatch. He literally looks at your body, listens to your goals and then uses his God given talent to crate a personal training program. If you are paying someone and not getting what you expect from a trainer, meet with Duda and see if he can change your life for good! He got me from 232 down to 190!',
+      text: 'Let me tell you about Duda Bueno. Hands down the best trainer in San Diego. No, he doesn\'t carry a whistle and notebook to write numbers from his stopwatch. He literally looks at your body, listens to your goals and then uses his God given talent to crate a personal training program. If you are paying someone and not getting what you expect from a trainer, meet with Duda and see if he can change your life for good! He got me from 300 down to 190!',
       rating: 5
     },
     {
