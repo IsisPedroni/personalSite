@@ -68,17 +68,25 @@ export function Gallery() {
 
   const allImages = [
     {
-      id: 1,
-      url: image7,
-      alt: 'Gym session',
+      id: 29,
+      url: newImage19,
+      alt: 'Fitness transformation',
+      type: 'image'
+    },
+
+    {
+      id: 54,
+      url: image3_23,
+      alt: 'Fitness transformation',
       type: 'image'
     },
     {
-      id: 2,
-      url: image8,
-      alt: 'Fitness coaching',
+      id: 47,
+      url: image3_16,
+      alt: 'Fitness transformation',
       type: 'image'
     },
+
     {
       id: 3,
       url: image9,
@@ -95,6 +103,12 @@ export function Gallery() {
       id: 5,
       url: image13,
       alt: 'Fitness coaching',
+      type: 'image'
+    },
+    {
+      id: 1,
+      url: image7,
+      alt: 'Gym session',
       type: 'image'
     },
     {
@@ -124,6 +138,12 @@ export function Gallery() {
     {
       id: 10,
       url: image18,
+      alt: 'Fitness coaching',
+      type: 'image'
+    },
+    {
+      id: 2,
+      url: image8,
       alt: 'Fitness coaching',
       type: 'image'
     },
@@ -235,12 +255,7 @@ export function Gallery() {
       alt: 'Fitness transformation',
       type: 'image'
     },
-    {
-      id: 29,
-      url: newImage19,
-      alt: 'Fitness transformation',
-      type: 'image'
-    },
+
     {
       id: 30,
       url: newImage20,
@@ -343,12 +358,7 @@ export function Gallery() {
       alt: 'Fitness transformation',
       type: 'image'
     },
-    {
-      id: 47,
-      url: image3_16,
-      alt: 'Fitness transformation',
-      type: 'image'
-    },
+
     {
       id: 48,
       url: image3_17,
@@ -385,12 +395,7 @@ export function Gallery() {
       alt: 'Fitness transformation',
       type: 'image'
     },
-    {
-      id: 54,
-      url: image3_23,
-      alt: 'Fitness transformation',
-      type: 'image'
-    },
+
     {
       id: 55,
       url: image3_24,
@@ -525,7 +530,7 @@ export function Gallery() {
             style={{ height: '100vh', overflowY: 'auto' }}
           >
             {/* Header with close button */}
-            <div className="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-6 bg-black bg-opacity-90 backdrop-blur-sm">
+            <div className="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-6 bg-black bg-opacity-90 backdrop-blur-sm h-20">
               <h3 className="text-white text-2xl font-bold">Full Gallery</h3>
               <button
                 onClick={() => setIsGalleryOpen(false)}
@@ -537,7 +542,7 @@ export function Gallery() {
             </div>
 
             {/* Grid with scroll */}
-            <div className="max-w-7xl mx-auto px-4 py-8 pt-24">
+            <div className="max-w-7xl mx-auto px-4 py-8" style={{ paddingTop: '6rem' }}>
               <motion.div
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
                 initial={{ opacity: 0, y: 20 }}
