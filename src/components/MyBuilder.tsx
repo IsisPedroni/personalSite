@@ -138,6 +138,8 @@ export function MyBuilder() {
                     alt="My Builder"
                     className="w-full h-full object-cover rounded-2xl"
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>

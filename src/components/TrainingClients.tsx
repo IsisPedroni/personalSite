@@ -2,7 +2,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import video1 from '../assets/2 (1).mp4';
 import video2 from '../assets/2 (2).mp4';
 import video3 from '../assets/2 (3).mp4';
@@ -53,6 +53,36 @@ const videos = [
 
 export function TrainingClients() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [visibleVideos, setVisibleVideos] = useState<Set<number>>(new Set());
+  const videoRefs = useRef<{ [key: number]: HTMLDivElement | null }>({});
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    videos.forEach((item) => {
+      const element = videoRefs.current[item.id];
+      if (!element) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setVisibleVideos((prev) => new Set(prev).add(item.id));
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: '50px' }
+      );
+
+      observer.observe(element);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, []);
 
   const settings = {
     dots: true,
@@ -123,19 +153,29 @@ export function TrainingClients() {
               {videos.map((item) => (
                 <div key={item.id} className="outline-none">
                   <div 
+                    ref={(el) => { videoRefs.current[item.id] = el; }}
                     className="relative h-[400px] w-full max-w-[400px] mx-auto rounded-2xl overflow-hidden shadow-lg cursor-pointer group"
                     style={{ maxWidth: '400px', height: '400px' }}
                     onClick={() => setSelectedVideo(item.video)}
                   >
-                    <video
-                      src={item.video}
-                      className="w-full h-full object-cover rounded-2xl"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                      muted
-                      loop
-                      playsInline
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-2xl group-hover:bg-black/20 transition-colors">
+                    {visibleVideos.has(item.id) ? (
+                      <video
+                        src={item.video}
+                        className="w-full h-full object-cover rounded-2xl"
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-800 rounded-2xl flex items-center justify-center">
+                        <div className="bg-white rounded-full p-4">
+                          <Play className="w-8 h-8 text-black" fill="black" />
+                        </div>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-2xl group-hover:bg-black/20 transition-colors pointer-events-none">
                       <div className="bg-white rounded-full p-4 group-hover:scale-110 transition-transform">
                         <Play className="w-8 h-8 text-black" fill="black" />
                       </div>
