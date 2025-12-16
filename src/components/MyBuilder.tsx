@@ -78,11 +78,11 @@ export function MyBuilder() {
         }
       },
       {
-        // aqui
         breakpoint: 900,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: true,
         }
       }
     ]
@@ -92,7 +92,7 @@ export function MyBuilder() {
     <section className="py-20 px-6 bg-white overflow-hidden ">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="mb-4 text-5xl md:text-6xl font-black" style={{ fontSize: '1.3rem', fontWeight: '500' }}>Bodybuilding years</h2>
+          <h2 className="mb-2 text-5xl md:text-6xl font-black" style={{ fontSize: '1.3rem', fontWeight: '500' }}>Bodybuilding years</h2>
 
         
           {/* <p className="text-gray-600 max-w-2xl mx-auto">
