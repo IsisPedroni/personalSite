@@ -5,8 +5,6 @@ import image7 from '../assets/1 (7).jpg';
 import image8 from '../assets/1 (8).jpg';
 import image9 from '../assets/1 (9).jpg';
 import image10 from '../assets/1 (10).jpg';
-import image11 from '../assets/1 (11).jpg';
-import image12 from '../assets/1 (12).jpg';
 import image13 from '../assets/1 (13).jpg';
 import image14 from '../assets/1 (14).jpg';
 import image15 from '../assets/1 (15).jpg';
@@ -15,7 +13,6 @@ import image17 from '../assets/1 (17).jpg';
 import image18 from '../assets/1 (18).jpg';
 import image19 from '../assets/4.jpeg';
 import newImage1 from '../assets/2 (1).jpeg';
-import newImage2 from '../assets/2 (2).jpeg';
 import newImage3 from '../assets/2 (3).jpeg';
 import newImage4 from '../assets/2 (4).jpeg';
 import newImage5 from '../assets/2 (5).jpeg';
@@ -70,313 +67,368 @@ export function Gallery() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   const allImages = [
-
     {
+      id: 1,
       url: image7,
       alt: 'Gym session',
       type: 'image'
     },
     {
+      id: 2,
       url: image8,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 3,
       url: image9,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 4,
       url: image10,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 5,
       url: image13,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 6,
       url: image14,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 7,
       url: image15,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 8,
       url: image16,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 9,
       url: image17,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 10,
       url: image18,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 11,
       url: image19,
       alt: 'Fitness coaching',
       type: 'image'
     },
     {
+      id: 12,
       url: newImage1,
       alt: 'Fitness transformation',
       type: 'image'
     },
-    // {
-    //   url: newImage2,
-    //   alt: 'Fitness transformation',
-    //   type: 'image'
-    // },
     {
+      id: 13,
       url: newImage3,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 14,
       url: newImage4,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 15,
       url: newImage5,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 16,
       url: newImage6,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 17,
       url: newImage7,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 18,
       url: newImage8,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 19,
       url: newImage9,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 20,
       url: newImage10,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 21,
       url: newImage11,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 22,
       url: newImage12,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 23,
       url: newImage13,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 24,
       url: newImage14,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 25,
       url: newImage15,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 26,
       url: newImage16,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 27,
       url: newImage17,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 28,
       url: newImage18,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 29,
       url: newImage19,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 30,
       url: newImage20,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 31,
       url: newImage21,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 32,
       url: image3_1,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 33,
       url: image3_2,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 34,
       url: image3_3,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 35,
       url: image3_4,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 36,
       url: image3_5,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 37,
       url: image3_6,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 38,
       url: image3_7,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 39,
       url: image3_8,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 40,
       url: image3_9,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 41,
       url: image3_10,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 42,
       url: image3_11,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 43,
       url: image3_12,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 44,
       url: image3_13,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 45,
       url: image3_14,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 46,
       url: image3_15,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 47,
       url: image3_16,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 48,
       url: image3_17,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 49,
       url: image3_18,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 50,
       url: image3_19,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 51,
       url: image3_20,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 52,
       url: image3_21,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 53,
       url: image3_22,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 54,
       url: image3_23,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 55,
       url: image3_24,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 56,
       url: image3_25,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 57,
       url: image3_26,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 58,
       url: image3_27,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 59,
       url: image3_28,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 60,
       url: image3_29,
       alt: 'Fitness transformation',
       type: 'image'
     },
     {
+      id: 61,
       url: image5,
       alt: 'Fitness transformation',
       type: 'image'
@@ -426,7 +478,7 @@ export function Gallery() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedImages.map((image, index) => (
             <motion.div
-              key={index}
+              key={image.id}
               className="relative overflow-hidden rounded-lg aspect-square group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -495,7 +547,7 @@ export function Gallery() {
               >
                 {allImages.map((image, index) => (
                   <motion.div
-                    key={index}
+                    key={image.id}
                     className="relative overflow-hidden rounded-lg aspect-square group cursor-pointer"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
