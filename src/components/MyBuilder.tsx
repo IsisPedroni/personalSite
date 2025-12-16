@@ -78,7 +78,8 @@ export function MyBuilder() {
         }
       },
       {
-        breakpoint: 640,
+        // aqui
+        breakpoint: 900,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
