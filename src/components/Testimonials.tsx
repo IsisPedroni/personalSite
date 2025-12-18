@@ -19,24 +19,18 @@ export function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Oscar',
-      role: 'Results speak louder than words',
-      text: 'When I met Duda, I had already been working out for 12 years but with his help I was able to leave my comfort zone and have intense workouts. In only six months, I improved my shoulders by 200%, my legs got big and lean, and for the first time, I was able to see muscles I did not even know I had. Additionally, Working out with duda is also fun. He keeps you motivated even when you wake up on the left side of your bed. Be ready to do lunges on inclined streets! You will feel like you are dying but believe me it is all worth it. Results speak louder than words. Life made me move to Los Angeles and I had to stop working out with him but I miss him so much. So guys when looking for a trainer in the San Diego area, Duda is the one.',
+      name: 'Carolyn T.',
+      role: 'It\'s Growing Time!',
+      text: 'I met Duda through my brother and sister-in-law. They were training with him, and I saw their results and wanted that too! When we started to train, I was out of shape and overweight, had horrible eating habits, and was very weak. Duda, with his knowledge of nutrition, put me on an eating plan, and we been to work out. With his guidance, my body started to change fast. I was losing weight and gaining muscle. Not only that, but I started getting stronger. Not only physically but mentally because when you look good, you feel good! I moved out of San Diego, but the knowledge he gave me has helped me throughout the years. I\'ve met other trainers, but no one comes close to him. Duda cares about his clients; he listens to them, and when you feel like you can\'t do it, he pushes you through with encouragement. Thank you, Duda, for changing my life. "It\'s Growing time!"',
       rating: 5,
-      image: image27
+      image: image21
     },
     {
-      name: 'Joe S.',
-      role: 'A great trainer',
-      text: 'Duda Bueno is a great trainer for all levels and ages. He is always kind, encouraging and motivating. Duda has a great understanding of the individual client\'s needs from the beginner to the pro bodybuilder. He can also help with diet and nutrition to support your training goals. His clients range in age as well as ability. And all are well taken care of under Duda\'s guidance. I trained with Duda for about 3 years and saw great gains and a better overall physique, in my 60s!',
-      rating: 5
-    },
-    {
-      name: 'Bruna T.',
-      role: 'Best choice I\'ve made',
-      text: 'Duda Bueno is an awesome personal trainer. Best choice I\'ve made training with him. He is very friendly, professional, motivational and perfectionist with performance. Always correcting your movements so you are sure it\'s a safe workout no matter what fitness level you\'re at. I really like he gives me tips about nutrition and my daily diet. Thank you Duda Bueno for pushing us in the right track!!!',
+      name: 'Joseph P.',
+      role: 'Best in San Diego',
+      text: 'Let me tell you about Duda Bueno. Hands down the best trainer in San Diego. No, he doesn\'t carry a whistle and notebook to write numbers from his stopwatch. He literally looks at your body, listens to your goals and then uses his God given talent to crate a personal training program. If you are paying someone and not getting what you expect from a trainer, meet with Duda and see if he can change your life for good! He got me from 300 down to 190!',
       rating: 5,
-      image: image28
+      image: image22
     },
     {
       name: 'Carol C.',
@@ -53,37 +47,11 @@ export function Testimonials() {
       image: image19
     },
     {
-      name: 'Bo',
-      role: 'Gave me results',
-      text: 'Training with Duda pushed me past my limits & gave me results. I thought I knew how to work out until I started training with him. Not only is he a fantastic trainer but also a great friend. He\'s been doing this for a long time & he practices what he preaches. Ps. It\'s growing time!',
-      rating: 5
-    },
-    {
-      name: 'Carolyn T.',
-      role: 'It\'s Growing Time!',
-      text: 'I met Duda through my brother and sister-in-law. They were training with him, and I saw their results and wanted that too! When we started to train, I was out of shape and overweight, had horrible eating habits, and was very weak. Duda, with his knowledge of nutrition, put me on an eating plan, and we been to work out. With his guidance, my body started to change fast. I was losing weight and gaining muscle. Not only that, but I started getting stronger. Not only physically but mentally because when you look good, you feel good! I moved out of San Diego, but the knowledge he gave me has helped me throughout the years. I\'ve met other trainers, but no one comes close to him. Duda cares about his clients; he listens to them, and when you feel like you can\'t do it, he pushes you through with encouragement. Thank you, Duda, for changing my life. "It\'s Growing time!"',
-      rating: 5,
-      image: image21
-    },
-    {
-      name: 'Joseph P.',
-      role: 'Best in San Diego',
-      text: 'Let me tell you about Duda Bueno. Hands down the best trainer in San Diego. No, he doesn\'t carry a whistle and notebook to write numbers from his stopwatch. He literally looks at your body, listens to your goals and then uses his God given talent to crate a personal training program. If you are paying someone and not getting what you expect from a trainer, meet with Duda and see if he can change your life for good! He got me from 300 down to 190!',
-      rating: 5,
-      image: image22
-    },
-    {
       name: 'Luciano G.',
       role: 'Duda can transform you',
       text: 'Are you thinking U gonna die? Felling bad? Depression? Duda can help you like he helped me! Duda can transform you body, mindset and quit your depression! The hardest part of our workouts is showing up. He makes it simple for you to push yourself to be your personal best, and he gives you more. MORE results. MORE confidence. MORE Life. I really recommend.',
       rating: 5,
       image: image23
-    },
-    {
-      name: 'Jerry G.',
-      role: 'Walks the talk',
-      text: 'I have been training on and off with Duda for ten years. I am 65 years of age, and he has tailored various programs for me depending on my age, my abilities, my goals, and my time commitment. Duda integrates nutrition and lifestyle changes into his individualized program. I appreciate that Duda is realistic and able to meet clients like me where I am at and considers my family and work commitments. Duda is relatable with a beautiful family. He is an authentic person and walks the talk.',
-      rating: 5
     },
     {
       name: 'Mark S.',
@@ -105,7 +73,39 @@ export function Testimonials() {
       text: 'With Duda\'s training and diet plan, I was able to lose 20 lbs. in a couple of months! His approach worked great for me, plus he\'s the nicest person.',
       rating: 5,
       image: image25
-    }
+    },
+    {
+      name: 'Oscar',
+      role: 'Results speak louder than words',
+      text: 'When I met Duda, I had already been working out for 12 years but with his help I was able to leave my comfort zone and have intense workouts. In only six months, I improved my shoulders by 200%, my legs got big and lean, and for the first time, I was able to see muscles I did not even know I had. Additionally, Working out with duda is also fun. He keeps you motivated even when you wake up on the left side of your bed. Be ready to do lunges on inclined streets! You will feel like you are dying but believe me it is all worth it. Results speak louder than words. Life made me move to Los Angeles and I had to stop working out with him but I miss him so much. So guys when looking for a trainer in the San Diego area, Duda is the one.',
+      rating: 5,
+      image: image27
+    },
+    {
+      name: 'Bruna T.',
+      role: 'Best choice I\'ve made',
+      text: 'Duda Bueno is an awesome personal trainer. Best choice I\'ve made training with him. He is very friendly, professional, motivational and perfectionist with performance. Always correcting your movements so you are sure it\'s a safe workout no matter what fitness level you\'re at. I really like he gives me tips about nutrition and my daily diet. Thank you Duda Bueno for pushing us in the right track!!!',
+      rating: 5,
+      image: image28
+    },
+    {
+      name: 'Joe S.',
+      role: 'A great trainer',
+      text: 'Duda Bueno is a great trainer for all levels and ages. He is always kind, encouraging and motivating. Duda has a great understanding of the individual client\'s needs from the beginner to the pro bodybuilder. He can also help with diet and nutrition to support your training goals. His clients range in age as well as ability. And all are well taken care of under Duda\'s guidance. I trained with Duda for about 3 years and saw great gains and a better overall physique, in my 60s!',
+      rating: 5
+    },
+    {
+      name: 'Bo',
+      role: 'Gave me results',
+      text: 'Training with Duda pushed me past my limits & gave me results. I thought I knew how to work out until I started training with him. Not only is he a fantastic trainer but also a great friend. He\'s been doing this for a long time & he practices what he preaches. Ps. It\'s growing time!',
+      rating: 5
+    },
+    {
+      name: 'Jerry G.',
+      role: 'Walks the talk',
+      text: 'I have been training on and off with Duda for ten years. I am 65 years of age, and he has tailored various programs for me depending on my age, my abilities, my goals, and my time commitment. Duda integrates nutrition and lifestyle changes into his individualized program. I appreciate that Duda is realistic and able to meet clients like me where I am at and considers my family and work commitments. Duda is relatable with a beautiful family. He is an authentic person and walks the talk.',
+      rating: 5
+    },
   ];
 
   const itemsPerPage = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 2;
@@ -196,7 +196,7 @@ export function Testimonials() {
                             src={testimonial.image}
                             alt={testimonial.name}
                             className="rounded-lg  object-cover"
-                            style={{ height: '400px', objectFit: 'cover', width: '90%' }}
+                            style={{ height: '400px', objectFit: 'contain', width: '90%' }}
                           />
                         </div>
                       )}
