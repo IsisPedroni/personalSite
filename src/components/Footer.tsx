@@ -119,7 +119,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-12 pt-12 border-t border-gray-800">
           {/* Logo and Description */}
           <div className="md:col-span-1">
-            <img src={logoDuda} alt="Team Duda Bueno" className="h-10 mb-4" />
+            <img src={logoDuda} alt="Team Duda Bueno - Personal Trainer San Diego" className="h-10 mb-4" width="120" height="40" />
             <p className="text-gray-300 text-sm">
               Transforming lives through personalized fitness training in San Diego, USA.
             </p>

@@ -17,8 +17,10 @@ export function About() {
           >
             <img
               src={aboutImage}
-              alt="Personal Trainer"
+              alt="Duda Bueno - Personal Trainer with over 30 years of experience in San Diego"
               className="rounded-lg shadow-xl w-full h-[500px] object-cover object-top"
+              loading="lazy"
+              decoding="async"
             />
           </motion.div>
 

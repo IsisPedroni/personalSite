@@ -135,7 +135,7 @@ export function MyBuilder() {
                 <div className="relative h-[550px] w-full max-w-[600px] mx-auto rounded-2xl overflow-hidden shadow-lg" style={{  maxWidth: '600px', height: '650px' }}>
                   <img
                     src={item.image}
-                    alt="My Builder"
+                    alt="Bodybuilding transformation and fitness journey"
                     className="w-full h-full object-cover rounded-2xl"
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                     loading="lazy"
