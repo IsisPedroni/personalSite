@@ -20,7 +20,7 @@ export function Services() {
     },
     {
       image: haletresImage,
-      title: '1 hour Single Session',
+      title: '1 on 1 personal training session',
       price: '$75.00',
       description: 'This is a great option if yout looking for a one on one private session to focus on specific area or goals.',
     },
