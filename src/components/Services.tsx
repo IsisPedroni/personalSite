@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import React from 'react';
 import pesoImage from '../assets/peso.webp';
 import weightImage from '../assets/online.jpg';
 import haletresImage from '../assets/haletres.webp';
@@ -15,7 +14,7 @@ export function Services() {
       image: pesoImage,
       title: '1 hour Group Session',
       price: '$45.00',
-      description: 'Thie is great for anyone that likes to train with others and get that extra motivation through a group training session. Groups can be anywhere from 2 to 5 people at a time.',
+      description: 'This is great for anyone that likes to train with others and get that extra motivation through a group training session. Groups can be anywhere from 2 to 5 people at a time.',
 
     },
     {
