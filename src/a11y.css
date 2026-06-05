@@ -1,0 +1,216 @@
+/* Skip links — hidden until keyboard focus */
+.skip-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skip-link {
+  position: fixed;
+  left: -9999px;
+  top: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1.25rem;
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 1rem;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.skip-link-contact:focus,
+.skip-link-contact:focus-visible {
+  top: 4.25rem;
+}
+
+
+
+/* Screen reader only */
+
+.sr-only {
+
+  position: absolute;
+
+  width: 1px;
+
+  height: 1px;
+
+  padding: 0;
+
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border-width: 0;
+
+}
+
+
+
+/* Improved contrast utility classes */
+
+.text-a11y-muted {
+
+  color: #d1d5db;
+
+}
+
+
+
+.text-a11y-subtle {
+
+  color: #9ca3af;
+
+}
+
+
+
+.hero-heading {
+
+  color: #e0f2fe;
+
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+
+}
+
+
+
+.hero-subtext {
+
+  color: #f3f4f6;
+
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+
+}
+
+
+
+/* Consistent keyboard focus for interactive elements */
+
+:focus-visible {
+
+  outline: 2px solid #000;
+
+  outline-offset: 2px;
+
+}
+
+
+
+footer :focus-visible,
+
+.bg-black :focus-visible {
+
+  outline-color: #fff;
+
+}
+
+
+
+/* Accessible slick carousel dots and touch targets */
+.slick-dots {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0;
+  margin: 0;
+}
+
+.slick-dots li {
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slick-dots li button,
+.carousel-dot-button {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  line-height: 0;
+}
+
+.slick-dots li button::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  line-height: 10px;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button::before {
+  opacity: 1;
+  width: 24px;
+}
+
+.slick-arrow {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.mybuilder-carousel .slick-dots li button::before,
+.training-clients-carousel .slick-dots li button::before {
+  color: #374151;
+}
+
+.training-clients-carousel .slick-dots li button::before {
+  color: #fff;
+}
+
+/* Prevent duplicate clone slides from creating overlapping touch targets */
+.slick-cloned button,
+.slick-cloned a {
+  pointer-events: none;
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+
+  *::before,
+
+  *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}
+

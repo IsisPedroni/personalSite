@@ -1,19 +1,20 @@
 import React from 'react';
 import { Award, Target, Users, TrendingUp } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import aboutImage from '../assets/dudaBueno.jpeg';
 
 export function About() {
+  const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" tabIndex={-1} aria-labelledby="about-heading" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
           >
             <img
               src={aboutImage}
@@ -25,12 +26,12 @@ export function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
           >
-            <h2 className="mb-6">About Me</h2>
+            <h2 id="about-heading" className="mb-6">About Me</h2>
             <p className="mb-4 text-gray-700">
               Hi, I'm Duda Bueno—a personal trainer originally from Brazil and proudly based in San Diego for more than 25 years. With over 30 years of experience coaching clients of all ages and fitness levels, my mission is to help you build real, lasting strength and health from the inside out.            </p>
             <p className="mb-8 text-gray-700">

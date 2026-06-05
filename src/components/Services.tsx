@@ -1,13 +1,11 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import pesoImage from '../assets/peso.webp';
 import weightImage from '../assets/online.jpg';
 import haletresImage from '../assets/haletres.webp';
+import { scrollToSection } from '../utils/scrollToSection';
 
 export function Services() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const prefersReducedMotion = useReducedMotion();
 
   const services = [
     {
@@ -33,16 +31,16 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="py-20 bg-black text-white">
+    <section id="services" tabIndex={-1} aria-labelledby="services-heading" className="py-20 bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
         >
-          <h2 className="mb-4 text-white text-4xl font-bold">Services</h2>
+          <h2 id="services-heading" className="mb-4 text-white text-4xl font-bold">Services</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
             Professional training programs designed to help you achieve your fitness goals
           </p>
@@ -54,10 +52,10 @@ export function Services() {
               <motion.div
                 key={index}
                 className="bg-white text-black p-6 rounded-lg hover:scale-105 transition-transform duration-300 flex flex-col"
-                initial={{ opacity: 0, y: 30 }}
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: prefersReducedMotion ? 0 : 0.5, delay: prefersReducedMotion ? 0 : index * 0.1 }}
               >
                 <div className="w-full rounded-lg overflow-hidden mb-4" style={{ height: '256px' }}>
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover" style={{ height: '100%', width: '100%' }} />
@@ -77,6 +75,7 @@ export function Services() {
 
 
                 <button
+                  type="button"
                   onClick={() => scrollToSection('contact')}
                   className="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-lg transition-colors mt-auto"
                 >

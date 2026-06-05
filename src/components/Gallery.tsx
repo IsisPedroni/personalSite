@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { Plus, X } from 'lucide-react';
+import { ModalPortal } from './ModalPortal';
+import { useFocusTrap } from '../hooks/useFocusTrap';
+import { useInertBackground } from '../hooks/useInertBackground';
+import { enrichGalleryAlt } from '../utils/galleryAlt';
 import image7 from '../assets/1 (7).jpg';
 import image8 from '../assets/1 (8).jpg';
 import image9 from '../assets/1 (9).jpg';
@@ -65,6 +69,23 @@ import image5 from '../assets/5.jpeg';
 
 export function Gallery() {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  useFocusTrap(dialogRef, isGalleryOpen);
+  useInertBackground(isGalleryOpen);
+
+  const openGallery = () => {
+    triggerRef.current = document.activeElement as HTMLElement;
+    setIsGalleryOpen(true);
+  };
+
+  const closeGallery = () => {
+    setIsGalleryOpen(false);
+    requestAnimationFrame(() => triggerRef.current?.focus());
+  };
 
   const allImages = [
     {
@@ -440,12 +461,17 @@ export function Gallery() {
     },
   ];
 
-  const displayedImages = allImages.slice(0, 6);
+  const enrichedImages = allImages.map((image, index) => ({
+    ...image,
+    alt: enrichGalleryAlt(image.alt, index),
+  }));
+
+  const displayedImages = enrichedImages.slice(0, 6);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isGalleryOpen) {
-        setIsGalleryOpen(false);
+        closeGallery();
       }
     };
 
@@ -464,17 +490,23 @@ export function Gallery() {
     };
   }, [isGalleryOpen]);
 
+  useEffect(() => {
+    if (isGalleryOpen) {
+      closeButtonRef.current?.focus();
+    }
+  }, [isGalleryOpen]);
+
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" tabIndex={-1} aria-labelledby="gallery-heading" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
         >
-          <h2 className="mb-4">Transformations</h2>
+          <h2 id="gallery-heading" className="mb-4">Transformations</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Check out some moments from our training sessions and transformations
           </p>
@@ -482,39 +514,42 @@ export function Gallery() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayedImages.map((image, index) => (
-            <motion.div
+            <motion.button
               key={image.id}
+              type="button"
               className="relative overflow-hidden rounded-lg aspect-square group cursor-pointer"
-              initial={{ opacity: 0, y: 30 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              onClick={() => setIsGalleryOpen(true)}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.5, delay: prefersReducedMotion ? 0 : index * 0.1 }}
+              onClick={openGallery}
+              aria-label={`View full gallery — ${image.alt}`}
             >
               <img
                 src={image.url}
-                alt={image.alt}
+                alt=""
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 loading="lazy"
                 decoding="async"
               />
-            </motion.div>
+            </motion.button>
           ))}
         </div>
 
         <motion.div
           className="flex justify-center mt-12"
-          initial={{ opacity: 0 }}
+          initial={prefersReducedMotion ? false : { opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          transition={{ duration: prefersReducedMotion ? 0 : 0.6, delay: prefersReducedMotion ? 0 : 0.3 }}
         >
           <button
-            onClick={() => setIsGalleryOpen(true)}
+            type="button"
+            onClick={openGallery}
             className="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all hover:scale-110"
-            aria-label="Open gallery"
+            aria-label="Open full gallery"
           >
-            <Plus size={32} />
+            <Plus size={32} aria-hidden="true" />
           </button>
         </motion.div>
       </div>
@@ -522,53 +557,61 @@ export function Gallery() {
       {/* Gallery Modal */}
       <AnimatePresence>
         {isGalleryOpen && (
+          <ModalPortal>
           <motion.div
+            ref={dialogRef}
             className="fixed inset-0 z-50 bg-black bg-opacity-95"
-            initial={{ opacity: 0 }}
+            initial={prefersReducedMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            exit={prefersReducedMotion ? undefined : { opacity: 0 }}
             style={{ height: '100vh', overflowY: 'auto' }}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="gallery-dialog-title"
           >
-            {/* Header with close button */}
             <div className="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-6 bg-black bg-opacity-90 backdrop-blur-sm h-20">
-              <h3 className="text-white text-2xl font-bold">Full Gallery</h3>
+              <h3 id="gallery-dialog-title" className="text-white text-2xl font-bold">Full Gallery</h3>
               <button
-                onClick={() => setIsGalleryOpen(false)}
+                ref={closeButtonRef}
+                type="button"
+                onClick={closeGallery}
                 className="text-white hover:text-gray-300 transition-colors"
                 aria-label="Close gallery"
               >
-                <X size={32} />
+                <X size={32} aria-hidden="true" />
               </button>
             </div>
 
-            {/* Grid with scroll */}
             <div className="max-w-7xl mx-auto px-4 py-8" style={{ paddingTop: '6rem' }}>
               <motion.div
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
-                initial={{ opacity: 0, y: 20 }}
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.3 }}
+                exit={prefersReducedMotion ? undefined : { opacity: 0, y: 20 }}
+                transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
               >
-                {allImages.map((image, index) => (
+                {enrichedImages.map((image, index) => (
                   <motion.div
                     key={image.id}
-                    className="relative overflow-hidden rounded-lg aspect-square group cursor-pointer"
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    className="relative overflow-hidden rounded-lg aspect-square group"
+                    initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: prefersReducedMotion ? 0 : 0.3, delay: prefersReducedMotion ? 0 : index * 0.05 }}
+                    whileHover={prefersReducedMotion ? undefined : { scale: 1.05 }}
                   >
                     <img
                       src={image.url}
                       alt={image.alt}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </motion.div>
                 ))}
               </motion.div>
             </div>
           </motion.div>
+          </ModalPortal>
         )}
       </AnimatePresence>
 

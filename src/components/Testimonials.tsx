@@ -1,6 +1,6 @@
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence, PanInfo } from 'motion/react';
-import { useState } from 'react';
+import { motion, AnimatePresence, PanInfo, useReducedMotion } from 'motion/react';
+import { useState, useEffect } from 'react';
 import image19 from '../assets/4.jpeg';
 import image20 from '../assets/5(11).jpeg';
 import image21 from '../assets/3 (16).jpeg';
@@ -16,6 +16,18 @@ import image28 from '../assets/5(18).jpeg';
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
+  const [slideAnnouncement, setSlideAnnouncement] = useState('');
+  const prefersReducedMotion = useReducedMotion();
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth < 768 ? 1 : 2);
+    };
+    updateItemsPerPage();
+    window.addEventListener('resize', updateItemsPerPage);
+    return () => window.removeEventListener('resize', updateItemsPerPage);
+  }, []);
 
   const testimonials = [
     {
@@ -108,22 +120,35 @@ export function Testimonials() {
     },
   ];
 
-  const itemsPerPage = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 2;
   const totalPages = Math.ceil(testimonials.length / itemsPerPage);
 
+  const announceSlide = (index: number) => {
+    setSlideAnnouncement(`Showing testimonials page ${index + 1} of ${totalPages}`);
+  };
+
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % totalPages);
+    setCurrentIndex((prev) => {
+      const next = (prev + 1) % totalPages;
+      announceSlide(next);
+      return next;
+    });
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + totalPages) % totalPages);
+    setCurrentIndex((prev) => {
+      const next = (prev - 1 + totalPages) % totalPages;
+      announceSlide(next);
+      return next;
+    });
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+    announceSlide(index);
   };
 
-  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+  const handleDragEnd = (_event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    if (prefersReducedMotion) return;
     const threshold = 50;
     if (info.offset.x > threshold) {
       prevSlide();
@@ -150,37 +175,57 @@ export function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" tabIndex={-1} aria-labelledby="testimonials-heading" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
         >
-          <h2 className="mb-4">Testimonials</h2>
+          <h2 id="testimonials-heading" className="mb-4">Testimonials</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             See what my clients say about their results
           </p>
         </motion.div>
 
-        <div className="relative md:px-16">
+        <div className="relative px-12 md:px-16" role="region" aria-label="Client testimonials carousel" aria-roledescription="carousel">
+          <div aria-live="polite" aria-atomic="true" className="sr-only">
+            {slideAnnouncement}
+          </div>
 
-          {/* Carousel Content */}
+          <button
+            type="button"
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-100 hover:bg-gray-200 min-w-11 min-h-11 inline-flex items-center justify-center rounded-full shadow-sm"
+            aria-label="Previous testimonials"
+          >
+            <ChevronLeft size={24} aria-hidden="true" />
+          </button>
+
+          <button
+            type="button"
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-100 hover:bg-gray-200 min-w-11 min-h-11 inline-flex items-center justify-center rounded-full shadow-sm"
+            aria-label="Next testimonials"
+          >
+            <ChevronRight size={24} aria-hidden="true" />
+          </button>
+
           <div className="overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
-                initial={{ opacity: 0, x: 100 }}
+                initial={prefersReducedMotion ? false : { opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.3 }}
-                drag="x"
+                exit={prefersReducedMotion ? undefined : { opacity: 0, x: -100 }}
+                transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
+                drag={prefersReducedMotion ? false : 'x'}
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
                 onDragEnd={handleDragEnd}
-                className="grid md:grid-cols-2 gap-8 cursor-grab active:cursor-grabbing"
+                className={`grid md:grid-cols-2 gap-8 ${prefersReducedMotion ? '' : 'cursor-grab active:cursor-grabbing'}`}
               >
                 {visibleTestimonials.map((testimonial, index) => {
                   const globalIndex = getGlobalIndex(index);
@@ -188,46 +233,47 @@ export function Testimonials() {
 
                   return (
                     <div key={index} className="bg-gray-50 p-6 md:p-8 rounded-lg relative">
-                      <Quote className="absolute top-4 right-4 text-black opacity-20" size={40} />
+                      <Quote className="absolute top-4 right-4 text-black opacity-20" size={40} aria-hidden="true" />
 
                       {testimonial.image && (
                         <div className="mb-4 flex justify-center items-center">
                           <img
                             src={testimonial.image}
-                            alt={testimonial.name}
+                            alt={`Photo of ${testimonial.name}`}
                             className="rounded-lg  object-cover"
                             style={{ height: '400px', objectFit: 'contain', width: '90%' }}
                           />
                         </div>
                       )}
-                      <div className="flex gap-1 mb-4">
+                      <div className="flex gap-1 mb-4" role="img" aria-label={`${testimonial.rating} out of 5 stars`}>
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
+                          <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" aria-hidden="true" />
                         ))}
                       </div>
 
-                      <div className="mb-6">
-                        <p
-                          className={`text-gray-700 italic ${!isExpanded ? 'line-clamp-5' : ''
-                            }`}
+                      <figure className="mb-6">
+                        <blockquote
+                          className={`text-gray-700 italic ${!isExpanded ? 'line-clamp-5' : ''}`}
                         >
-                          "{testimonial.text}"
-                        </p>
+                          <p>{testimonial.text}</p>
+                        </blockquote>
 
                         {testimonial.text.length > 200 && (
                           <button
+                            type="button"
                             onClick={() => toggleExpanded(globalIndex)}
+                            aria-expanded={isExpanded}
                             className="text-black hover:text-gray-700 text-sm mt-2 underline"
                           >
                             {isExpanded ? 'Read less' : 'Read more'}
                           </button>
                         )}
-                      </div>
+                      </figure>
 
-                      <div>
+                      <figcaption>
                         <div className="text-gray-900">{testimonial.name}</div>
                         <div className="text-sm text-black">{testimonial.role}</div>
-                      </div>
+                      </figcaption>
                     </div>
                   );
                 })}
@@ -236,16 +282,23 @@ export function Testimonials() {
           </div>
         </div>
 
-        {/* Dots Navigation */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex flex-wrap justify-center gap-1 mt-8" role="group" aria-label="Testimonial pages">
           {[...Array(totalPages)].map((_, index) => (
             <button
               key={index}
+              type="button"
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${index === currentIndex ? 'bg-black w-8' : 'bg-gray-300'
+              aria-current={index === currentIndex ? 'true' : undefined}
+              aria-label={`Go to testimonial page ${index + 1} of ${totalPages}`}
+              className="inline-flex items-center justify-center w-11 h-11 rounded-full"
+            >
+              <span
+                aria-hidden="true"
+                className={`block rounded-full transition-all ${
+                  index === currentIndex ? 'h-2.5 w-8 bg-black' : 'h-2.5 w-2.5 bg-gray-500'
                 }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
+              />
+            </button>
           ))}
         </div>
       </div>
