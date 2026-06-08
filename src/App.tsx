@@ -12,7 +12,7 @@ import React from 'react';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-clip">
       <div className="skip-links">
         <a href="#main-content" className="skip-link">
           Skip to main content

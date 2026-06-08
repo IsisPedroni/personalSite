@@ -40,19 +40,19 @@ export function Hero() {
         <p className="mb-8 text-base hero-subtext">
           Embark on your fitness journey with expert guidance and state-of-the-art equipment that gets you RESULTS. Iprovide personalized training and diet plans to transform your total health and overall well-being so you can look and feel your best at any age.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 w-full max-w-xl mx-auto">
           <a
             href={`tel:${PHONE_TEL}`}
-            className="bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors font-medium"
+            className="bg-white hover:bg-gray-200 text-black px-6 py-3 sm:px-8 sm:py-4 rounded-full inline-flex items-center justify-center gap-2 transition-colors font-medium max-w-full text-center"
           >
             Call: {PHONE_DISPLAY}
           </a>
-          <div className="relative inline-block">
+          <div className="relative w-full sm:w-auto">
             <button
               type="button"
               onClick={copyPhone}
               aria-label={`Copy phone number ${PHONE_DISPLAY} to clipboard`}
-              className="border-2 border-white hover:bg-white/10 text-white px-8 py-4 rounded-full inline-flex items-center gap-2 transition-colors"
+              className="w-full sm:w-auto border-2 border-white hover:bg-white/10 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full inline-flex items-center justify-center gap-2 transition-colors"
             >
               Copy number
             </button>

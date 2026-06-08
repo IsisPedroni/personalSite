@@ -54,7 +54,6 @@ const defaultSettings: A11ySettings = {
   showPageStructure: false,
 };
 
-const FONT_SCALES: Record<Level, number> = { 0: 1, 1: 1.1, 2: 1.2, 3: 1.3 };
 const LINE_HEIGHTS: Record<Level, string> = { 0: '', 1: '1.75', 2: '2', 3: '2.25' };
 const CONTRAST_FILTERS: Record<Level, string> = {
   0: '',
@@ -77,7 +76,9 @@ function applySettings(settings: A11ySettings) {
   const root = document.documentElement;
   const body = document.body;
 
-  root.style.fontSize = `${FONT_SCALES[settings.biggerTextLevel] * 100}%`;
+  root.style.fontSize = '';
+  root.classList.remove('a11y-text-size-0', 'a11y-text-size-1', 'a11y-text-size-2', 'a11y-text-size-3');
+  root.classList.add(`a11y-text-size-${settings.biggerTextLevel}`);
   body.style.lineHeight = LINE_HEIGHTS[settings.lineHeightLevel] || '';
 
   root.classList.toggle('a11y-text-left', settings.textAlign === 'left');
@@ -245,6 +246,7 @@ export function AccessibilityWidget() {
   const reset = () => {
     setSettings(defaultSettings);
     document.body.style.lineHeight = '';
+    document.documentElement.style.fontSize = '';
     document.documentElement.style.filter = '';
   };
 

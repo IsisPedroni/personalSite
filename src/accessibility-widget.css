@@ -300,6 +300,88 @@
   background: transparent;
 }
 
+/* Bigger text — scale typography only, keep layout spacing stable */
+html.a11y-text-size-1 {
+  --a11y-text-scale: 1.1;
+}
+
+html.a11y-text-size-2 {
+  --a11y-text-scale: 1.2;
+}
+
+html.a11y-text-size-3 {
+  --a11y-text-scale: 1.3;
+}
+
+html.a11y-text-size-1,
+html.a11y-text-size-2,
+html.a11y-text-size-3 {
+  --text-sm: calc(0.875rem * var(--a11y-text-scale));
+  --text-base: calc(1rem * var(--a11y-text-scale));
+  --text-lg: calc(1.125rem * var(--a11y-text-scale));
+  --text-xl: calc(1.25rem * var(--a11y-text-scale));
+  --text-2xl: calc(1.5rem * var(--a11y-text-scale));
+}
+
+/* Inherited text (e.g. text-gray-700 color-only classes) scales via content regions */
+html.a11y-text-size-1 :where(main, footer, nav),
+html.a11y-text-size-2 :where(main, footer, nav),
+html.a11y-text-size-3 :where(main, footer, nav) {
+  font-size: calc(1rem * var(--a11y-text-scale));
+}
+
+html.a11y-text-size-1 .hero-heading,
+html.a11y-text-size-2 .hero-heading,
+html.a11y-text-size-3 .hero-heading {
+  font-size: calc(24px * var(--a11y-text-scale)) !important;
+}
+
+html.a11y-text-size-1 #training-clients-heading,
+html.a11y-text-size-1 #bodybuilding-heading,
+html.a11y-text-size-2 #training-clients-heading,
+html.a11y-text-size-2 #bodybuilding-heading,
+html.a11y-text-size-3 #training-clients-heading,
+html.a11y-text-size-3 #bodybuilding-heading {
+  font-size: calc(1.3rem * var(--a11y-text-scale)) !important;
+}
+
+/* Keep accessibility widget UI at normal size */
+html.a11y-text-size-1 .a11y-widget,
+html.a11y-text-size-2 .a11y-widget,
+html.a11y-text-size-3 .a11y-widget {
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  html.a11y-text-size-2,
+  html.a11y-text-size-3 {
+    overflow-x: clip;
+  }
+
+  html.a11y-text-size-2 body,
+  html.a11y-text-size-3 body {
+    overflow-x: clip;
+  }
+
+  html.a11y-text-size-2 :where(main, footer, nav) :where(p, a, button, h1, h2, h3, li, span),
+  html.a11y-text-size-3 :where(main, footer, nav) :where(p, a, button, h1, h2, h3, li, span) {
+    overflow-wrap: anywhere;
+  }
+
+  html.a11y-text-size-2 #hero .rounded-full,
+  html.a11y-text-size-3 #hero .rounded-full {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    hyphens: auto;
+  }
+
+  html.a11y-text-size-2 #contact .bg-gray-900,
+  html.a11y-text-size-3 #contact .bg-gray-900 {
+    min-width: 0;
+  }
+}
+
 /* Global accessibility modes */
 html.a11y-text-left body {
   text-align: left !important;
