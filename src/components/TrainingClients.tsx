@@ -184,13 +184,16 @@ export function TrainingClients() {
                 margin: 0;
                 height: auto;
               }
+              .training-clients-carousel .slick-slide > div > div {
+                height: 100%;
+              }
               .training-clients-carousel .slick-list {
                 margin: 0;
                 overflow: hidden;
               }
               .training-clients-carousel .slick-track {
                 display: flex;
-                align-items: stretch;
+                align-items: flex-start;
               }
               .training-clients-carousel .slick-slider {
                 position: relative;
@@ -202,14 +205,13 @@ export function TrainingClients() {
                 <div key={item.id} className="outline-none carousel-slide-target">
                   <button
                     type="button"
-                    className="relative w-full max-w-[400px] mx-auto rounded-2xl overflow-hidden shadow-lg cursor-pointer group block min-h-[400px]"
+                    className="relative w-full max-w-[400px] mx-auto aspect-[9/16] rounded-2xl overflow-hidden shadow-lg cursor-pointer group block"
                     onClick={() => openVideo(item)}
                     aria-label={`Play ${item.label}`}
                   >
                     <video
                       src={item.video}
-                      className="w-full h-full object-cover rounded-2xl pointer-events-none"
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      className="absolute inset-0 w-full h-full object-cover rounded-2xl pointer-events-none"
                       muted
                       loop
                       playsInline
