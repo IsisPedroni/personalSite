@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import "./a11y.css";
+import "./accessibility-widget.css";
 
 if (import.meta.env.DEV) {
   void Promise.all([

@@ -124,38 +124,60 @@ footer :focus-visible,
 
 
 /* Accessible slick carousel dots and touch targets */
-.slick-dots {
+.mybuilder-carousel,
+.training-clients-carousel {
+  padding-bottom: 3.5rem;
+}
+
+.mybuilder-carousel .slick-dots,
+.training-clients-carousel .slick-dots {
+  position: static !important;
   display: flex !important;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  padding: 8px 0;
-  margin: 0;
+  gap: 8px !important;
+  width: 100%;
+  padding: 1rem 0 0 !important;
+  margin: 0 !important;
+  list-style: none;
+  bottom: auto !important;
 }
 
-.slick-dots li {
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  display: inline-flex;
+.mybuilder-carousel .slick-dots li,
+.training-clients-carousel .slick-dots li {
+  position: relative;
+  width: 48px !important;
+  height: 48px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
 }
 
-.slick-dots li button,
+.mybuilder-carousel .slick-dots li button,
+.training-clients-carousel .slick-dots li button,
 .carousel-dot-button {
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  display: inline-flex;
+  position: relative !important;
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  font-size: 0;
-  line-height: 0;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
 }
 
-.slick-dots li button::before {
+.mybuilder-carousel .slick-dots li button::before,
+.training-clients-carousel .slick-dots li button::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -165,16 +187,21 @@ footer :focus-visible,
   line-height: 10px;
   transform: translate(-50%, -50%);
   opacity: 0.5;
+  content: '•';
 }
 
-.slick-dots li.slick-active button::before {
+.mybuilder-carousel .slick-dots li.slick-active button::before,
+.training-clients-carousel .slick-dots li.slick-active button::before {
   opacity: 1;
   width: 24px;
 }
 
-.slick-arrow {
-  min-width: 44px;
-  min-height: 44px;
+.mybuilder-carousel .slick-arrow,
+.training-clients-carousel .slick-arrow {
+  min-width: 48px !important;
+  min-height: 48px !important;
+  width: 48px !important;
+  height: 48px !important;
 }
 
 .mybuilder-carousel .slick-dots li button::before,
@@ -189,7 +216,18 @@ footer :focus-visible,
 /* Prevent duplicate clone slides from creating overlapping touch targets */
 .slick-cloned button,
 .slick-cloned a {
-  pointer-events: none;
+  pointer-events: none !important;
+}
+
+/* Isolate carousel slide touch targets from neighbors */
+.carousel-slide-target {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.carousel-slide-target > button {
+  width: 100%;
+  min-height: 400px;
 }
 
 

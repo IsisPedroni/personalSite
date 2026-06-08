@@ -177,23 +177,20 @@ export function TrainingClients() {
           <div className="relative overflow-hidden training-clients-carousel" role="region" aria-label="Client training videos" aria-roledescription="carousel">
             <style>{`
               .training-clients-carousel .slick-slide > div {
-                padding: 0 16px;
+                padding: 0;
                 height: 100%;
               }
               .training-clients-carousel .slick-slide {
                 margin: 0;
-                height: 400px;
+                height: auto;
               }
               .training-clients-carousel .slick-list {
-                margin: 0 -16px;
+                margin: 0;
                 overflow: hidden;
               }
               .training-clients-carousel .slick-track {
                 display: flex;
                 align-items: stretch;
-              }
-              .training-clients-carousel .slick-slide > div > div {
-                height: 100%;
               }
               .training-clients-carousel .slick-slider {
                 position: relative;
@@ -202,11 +199,10 @@ export function TrainingClients() {
             `}</style>
             <Slider ref={sliderRef} {...settings}>
               {videos.map((item) => (
-                <div key={item.id} className="outline-none">
+                <div key={item.id} className="outline-none carousel-slide-target">
                   <button
                     type="button"
-                    className="relative h-[400px] w-full max-w-[400px] mx-auto rounded-2xl overflow-hidden shadow-lg cursor-pointer group block"
-                    style={{ maxWidth: '400px', height: '400px' }}
+                    className="relative w-full max-w-[400px] mx-auto rounded-2xl overflow-hidden shadow-lg cursor-pointer group block min-h-[400px]"
                     onClick={() => openVideo(item)}
                     aria-label={`Play ${item.label}`}
                   >
@@ -268,6 +264,7 @@ export function TrainingClients() {
                 className="w-full h-auto max-h-[70vh] rounded-lg"
                 controls
                 autoPlay
+                muted
                 playsInline
                 aria-label={selectedVideo.label}
                 aria-describedby="video-dialog-description"
